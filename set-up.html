@@ -324,8 +324,6 @@ div.tocify {
 </div>
 
 
-<div id="set-up" class="section level1">
-<h1>Set-up</h1>
 <div id="get-an-account-on-github" class="section level2">
 <h2>Get an account on GitHub</h2>
 <p>If you don’t already have an account on GitHub, go to <a href="github.com" class="uri">github.com</a> and click the “sign up” link near upper right of the page. It is pretty self-explanatory. Go ahead and get a <strong>free</strong> account.</p>
@@ -347,18 +345,25 @@ div.tocify {
 <li><p><strong>RStudio:</strong> Install the latest “development” version of RStudio becuase it has features that we may want to use during this course. Get it from <a href="https://www.rstudio.com/products/rstudio/download/preview/" class="uri">https://www.rstudio.com/products/rstudio/download/preview/</a> and install the appropriate one for your OS.</p></li>
 <li><p><strong>R:</strong> Make sure you have the latest version of R.<br />
 Go to <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> and find the download link for your computer system.</p></li>
-<li><p><strong>bookdown:</strong> package. This automatically installs many packages that are useful for authoring reproducible research. We want the latest development version, which can be obtained from GitHub by issuing the following commans at the R prompt (i.e. in the console window of RStudio:)</p>
-<pre class="r"><code>install.packages(&quot;devtools&quot;)  
-devtools::install_github(&quot;rstudio/bookdown&quot;)</code></pre></li>
-<li><p>Install <strong>other packages</strong> that we are going to be needing in the first few weeks. Install: <code>tidyverse</code>, and <code>stringr</code>.</p>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)  
-install.packages(&quot;stringr&quot;)  </code></pre></li>
+<li><p><strong>bookdown:</strong> package. This automatically installs many packages that are useful for authoring reproducible research. We want the latest development version, which can be obtained from GitHub by issuing the following commans at the R prompt (i.e. in the console window of RStudio:)</p></li>
 </ol>
+<pre class="r"><code>install.packages(&quot;devtools&quot;)  
+devtools::install_github(&quot;rstudio/bookdown&quot;)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Install <strong>other packages</strong> that we are going to be need.</li>
+</ol>
+<pre class="r"><code>install.packages(&quot;knitr&quot;)  
+install.packages(&quot;rmarkdown&quot;)  
+install.packages(&quot;ggplot2&quot;)  
+install.packages(&quot;stringr&quot;)  </code></pre>
 </div>
-<div id="create-a-folder-on-your-computer-for-the-workshop-materials" class="section level2">
-<h2>Create a folder on your computer for the workshop materials</h2>
-<p>You can create it anywhere you want. But name it <code>RWorkflow</code> just so we all use the same folder name for the workshop.</p>
+<div id="create-a-workshop-folder" class="section level2">
+<h2>Create a workshop folder</h2>
+<p>Create a folder/directory on your computer for the workshop materials. You can create it anywhere you want. But name it <code>RWorkflow</code> just so we all use the same folder name for the workshop.</p>
 </div>
+<div id="disqus-forum" class="section level2">
+<h2>Disqus forum</h2>
+<p>I have added a Disqus forum to the website. <a href="https://disqus.com/">Create an account</a> if you would like to be able to add comments/questions. This will allow people to pose questions to the group and allow me (and others) to answer.</p>
 </div>
 
 <div id="disqus_thread"></div>

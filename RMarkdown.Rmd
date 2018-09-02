@@ -3,6 +3,8 @@ title: "RMarkdown Documents"
 output:
   html_document:
     toc: true
+    include:
+      after_body: footer.html
 ---
 
 ```{r setup, include=FALSE}
