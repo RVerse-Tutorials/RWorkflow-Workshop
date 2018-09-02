@@ -1,5 +1,15 @@
 ---
-title: "My Website"
+title: "R Workflow Short-Course"
 ---
 
-Hello, Website!
+[Course Announcement](http://www.incois.gov.in/ITCOocean/ftsf.jsp)
+
+This short-course will cover Report-writing and Code documentation with R:
+
+- Basic workflow using RStudio, Git and GitHub
+- Intro to RMarkdown
+- Creating simple websites from RStudio
+- Build an R package with RStudio
+- Creating simple websites from R packages on GitHub
+- Creating a book with RMarkdown: Intro to Bookdown.
+- Creating and publishing RShiny applications

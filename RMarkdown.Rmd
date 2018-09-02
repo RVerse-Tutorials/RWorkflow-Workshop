@@ -1,0 +1,86 @@
+---
+title: "RMarkdown Documents"
+output:
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+Rmarkdown is a format that allows you to combine text and R code.  From RStudio you can output your file in many formats: html, PDF, Word, presentations.
+
+## Copy the Rmarkdown folder from GitHub
+
+### Method #1
+
+1. From RStudio, go to the menu option
+'File->New Project...'. Then from the resulting dialog, choose
+"Version Control".  Then choose "Git".  Then it asks for a "repository URL".
+Supply this: `https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial` and 
+leave the "Project Directory Name" empty.  And then choose a directory 
+in which to put it and click OK.
+
+2. Click on the 'More' link in the Git Window of RStudio, and click 'Shell'.  Then issue this command.
+```
+git remote rm origin
+```
+This detaches the cloned repository from the remote repository on GitHub from where you cloned it.
+That will pull the RStudio project off of GitHub, make a local clone
+of it on your hard drive and open.
+
+### Method #2
+
+If that doesn't work, then go to https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial and click 'Clone or download' and chose 'Download Zip'.  If you chose, 'Clone in Desktop', you'll need to run the git code above to detach from GitHub.
+
+### Add your new Project to your GitHub (optional)
+
+1. Open GitHub Desktop.
+2. Click File > Add Local Repository
+3. Navigate to the folder `Rmarkdown-Tutorial` and click Add Repository
+4. Now you should see 'Publish Repository' in GitHub Desktop.  Uncheck the 'keep code private box' and then click 'Publish'.  Note, it can take a moment to work.
+
+
+## Assignment for next week: Create an RStudio Project with Your Own Data
+
+Your mission for the following week---i.e., please have this done (or as done as you can get it) by Friday, April 14, 2017---is
+to prepare an RStudio project with your own data set, and provide some background about the data and
+the ways that you would like to analyze it.  The "rep-res-coho-example" is an example of what I 
+have in mind for this.  You should use the  README.Rmd from that project as a template for your own
+README.Rmd.  (To do this you can just copy the README.Rmd file into the top level of your project directory
+and then edit it to reflect your own data and project.)
+
+
+To do all this you are going to want to make your own project.  Do that like this:
+
+1. In RStudio, choose "File->New Project..."
+1. Then choose "New Directory" and then choose "Empty Project"
+1. In the next dialog, choose a name (_it is best to  use only letters, numbers, dashes, and underscores, and include no spaces in the name_) for it **and be sure to click the "Create a git repository" button**.  
+1. Then click "Create Project".
+
+That should give you a new project.  Here are some guidelines for putting your own data in there
+
+* Put all of your data in a directory named `data` in your project.
+* CSV (comma separated values) is probably the best format to use.  It is text-readable without
+proprietary software (unlike an Excel file); however if you need to look at it in a tabular way with 
+Excel, (gasp), you can do that easily.  Tab-delimited text works if you have that, but CSV is preferred.
+* Use only letters, numbers, dashes, and underscores for the file names, (and periods for their extensions, i.e., `.csv`)
+* Give a brief description of your data in the README.Rmd.
+
+
+## Reading for next week {#week2reading}
+
+This week (before Friday, April 14, 2017), please read the following sections of the R for Data Science book
+
+* [Workflow basics](http://r4ds.had.co.nz/workflow-basics.html): super basic review on how R works.
+* [Workflow: projects](http://r4ds.had.co.nz/workflow-projects.html): info about organizing RStudio projects.
+* [Workflow: scripts](http://r4ds.had.co.nz/workflow-scripts.html):  how to evaluate code in scripts.
+* [tibbles](http://r4ds.had.co.nz/tibbles.html): a streamlined data frame format.
+* [data import](http://r4ds.had.co.nz/data-import.html) This is our key reading for the week.
+
+When you are done with the _Data Import_ reading, take a whack at writing some code to read 
+the data files in your project into a variable (or several variables). 
+

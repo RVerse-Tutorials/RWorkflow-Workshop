@@ -1,0 +1,53 @@
+---
+title: "Set-up"
+output:
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Set-up
+
+## Get an account on GitHub
+
+If you don't already have an account on GitHub, go to [github.com](github.com) and click the "sign up" link near upper right 
+of the page.  It is pretty self-explanatory.  Go ahead and get a **free** account.  
+
+The free GitHub account does not have private repositories.  Everything is public and viewable.  You can upgrade (for money) and get private repositories.  Or _if you are a student_, you can get private repositories from GitHub for free.  Go to [https://education.github.com/pack](https://education.github.com/pack) to sign up for your free student pack.  You will need to upload proof that you are a student or faculty.
+
+## Install GitHub Desktop
+
+1. Go to [desktop.github.com](https://desktop.github.com/) and install.
+2. Open GitHub Desktop, go to 'GitHub Desktop > Preferences' menu.  
+3. Under 'Accounts', sign into your GitHub account.
+3. Under 'Git', enter your name (or initials) and the email you used for your GitHub account.
+
+
+## Install RStudio and R
+
+1. **RStudio:** Install the latest "development" version of RStudio becuase it has features that we may want to use during this course.  Get it from [https://www.rstudio.com/products/rstudio/download/preview/](https://www.rstudio.com/products/rstudio/download/preview/) and install the appropriate one for your OS.
+
+1. **R:**  Make sure you have the latest version of R.  
+Go to [https://cran.r-project.org/](https://cran.r-project.org/) and find the download link for your computer system.
+
+1. **bookdown:** package.  This automatically installs many packages that are useful for authoring reproducible research.  We want the latest development version, which 
+can be obtained from GitHub by issuing the following commans at the R prompt (i.e. in the console window of RStudio:)
+    ```{r get-bd, eval=FALSE}
+    install.packages("devtools")  
+    devtools::install_github("rstudio/bookdown")
+    ```
+
+1. Install **other packages** that we are going to be needing in the first few weeks.  Install: `tidyverse`, and `stringr`.
+    ```{r get-packages, eval=FALSE}
+    install.packages("tidyverse")  
+    install.packages("stringr")  
+    ```
+
+
+## Create a folder on your computer for the workshop materials
+
+You can create it anywhere you want.  But name it `RWorkflow` just so we all use the same folder name for the workshop.
+

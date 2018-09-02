@@ -1,16 +1,25 @@
-name: "my-website"
+name: "rworkflow-workshop"
 output_dir: "."
 navbar:
-  title: "My Website"
+  title: "RWorkflow Workshop"
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
+    - text: "Set-up"
+      icon: fa-clone
+      href: set-up.html
+    - text: "RStudio"
+      icon: fa-cogs
+      href: rstudio.html
+    - text: "RMarkdown"
+      icon: fa-file
+      href: rmarkdown.html
     - text: "About"
       href: about.html
 output:
   html_document:
-    theme: cosmo
+    theme: readable
+    toc_depth: 2
+    toc_float:
+      collapsed: false
     highlight: textmate
     include:
       after_body: footer.html
