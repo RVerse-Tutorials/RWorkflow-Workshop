@@ -11,7 +11,7 @@
 
 
 
-<title>Set-up</title>
+<title>Simple Websites from Rmds</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -347,51 +347,143 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Set-up</h1>
+<h1 class="title toc-ignore">Simple Websites from Rmds</h1>
 
 </div>
 
 
-<div id="get-an-account-on-github" class="section level2">
-<h2>Get an account on GitHub</h2>
-<p>If you don’t already have an account on GitHub, go to <a href="github.com" class="uri">github.com</a> and click the “sign up” link near upper right of the page. It is pretty self-explanatory. Go ahead and get a <strong>free</strong> account.</p>
-<p>The free GitHub account does not have private repositories. Everything is public and viewable. You can upgrade (for money) and get private repositories. Or <em>if you are a student</em>, you can get private repositories from GitHub for free. Go to <a href="https://education.github.com/pack" class="uri">https://education.github.com/pack</a> to sign up for your free student pack. You will need to upload proof that you are a student or faculty.</p>
-</div>
-<div id="install-github-desktop" class="section level2">
-<h2>Install GitHub Desktop</h2>
+<div id="set-up" class="section level1">
+<h1>Set-up</h1>
 <ol style="list-style-type: decimal">
-<li>Go to <a href="https://desktop.github.com/">desktop.github.com</a> and install.</li>
-<li>Open GitHub Desktop, go to ‘GitHub Desktop &gt; Preferences’ menu.<br />
-</li>
-<li>Under ‘Accounts’, sign into your GitHub account.</li>
-<li>Under ‘Git’, enter your name (or initials) and the email you used for your GitHub account.</li>
+<li>Go to <a href="https://github.com/eeholmes/Test-Website" class="uri">https://github.com/eeholmes/Test-Website</a> and copy all the files into a directory.</li>
 </ol>
-</div>
-<div id="install-rstudio-and-r" class="section level2">
-<h2>Install RStudio and R</h2>
-<ol style="list-style-type: decimal">
-<li><p><strong>RStudio:</strong> Install the latest “development” version of RStudio becuase it has features that we may want to use during this course. Get it from <a href="https://www.rstudio.com/products/rstudio/download/preview/" class="uri">https://www.rstudio.com/products/rstudio/download/preview/</a> and install the appropriate one for your OS.</p></li>
-<li><p><strong>R:</strong> Make sure you have the latest version of R.<br />
-Go to <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> and find the download link for your computer system.</p></li>
-<li><p><strong>bookdown:</strong> package. This automatically installs many packages that are useful for authoring reproducible research. We want the latest development version, which can be obtained from GitHub by issuing the following commans at the R prompt (i.e. in the console window of RStudio:)</p></li>
+<ul>
+<li><p>If GitHub Desktop works for you, then you can click ‘Clone or download’ and then click open in Desktop.</p></li>
+<li><p>If GitHub Desktop is not working for you, then click ‘Clone or download’ and then download a zip file and unzip on your computer.</p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Open RStudio and ‘New Project’ in the upper right. Then select ‘From Existing Directory’ and select the directory where the ‘Test-Website’ files are.</p></li>
+<li><p>From RStudio, click ‘Build’ from upper right and then ‘Build Website’. Your website should open. You can select ‘View in browser’.</p></li>
 </ol>
-<pre class="r"><code>install.packages(&quot;devtools&quot;)  
-devtools::install_github(&quot;rstudio/bookdown&quot;)</code></pre>
-<ol style="list-style-type: decimal">
-<li>Install <strong>other packages</strong> that we are going to be need.</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;knitr&quot;)  
-install.packages(&quot;rmarkdown&quot;)  
-install.packages(&quot;ggplot2&quot;)  
-install.packages(&quot;stringr&quot;)  </code></pre>
+<ul>
+<li>You can also right click on ‘index.html’ from the files, and select ‘open in browser’.</li>
+</ul>
 </div>
-<div id="create-a-workshop-folder" class="section level2">
-<h2>Create a workshop folder</h2>
-<p>Create a folder/directory on your computer for the workshop materials. You can create it anywhere you want. But name it <code>RWorkflow</code> just so we all use the same folder name for the workshop.</p>
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<p>There are two required files for a website plus your content (your R Markdown files).</p>
+<p>The first required file is <code>_site.yml</code> which is your configuration file.</p>
+<p>The second required file is <code>index.Rmd</code> which is your landing page or page #1.</p>
+<p>Your content is specified in additional R Markdown files. Not required, but your website is not very interesting without content.</p>
 </div>
-<div id="disqus-forum" class="section level2">
-<h2>Disqus forum</h2>
-<p>I have added a Disqus forum to the website. <a href="https://disqus.com/">Create an account</a> if you would like to be able to add comments/questions. This will allow people to pose questions to the group and allow me (and others) to answer.</p>
+<div id="site.yml" class="section level1">
+<h1>_site.yml</h1>
+<p>The <code>_site.yml</code> specifies the basic info about your site and the navigation bar at top.</p>
+<pre><code>name: &quot;my-website&quot;
+output_dir: &quot;.&quot;
+navbar:
+  title: &quot;My Website&quot;
+  left:
+    - text: &quot;Home&quot;
+      icon: fa-home
+      href: index.html
+    - text: &quot;About&quot;
+      icon: fa-bullhorn
+      href: about.html
+output:
+  html_document:
+    theme: readable
+    toc_depth: 3
+    toc_float:
+      collapsed: false</code></pre>
+</div>
+<div id="index.rmd" class="section level1">
+<h1>index.Rmd</h1>
+<p><code>index.Rmd</code> is just your landing page. You can have as little or as much content as you want here. When readers click on your site, they will see this page first.</p>
+<p>A minimal <code>index.Rmd</code> would look like:</p>
+<pre><code>---
+title: &quot;My website&quot;
+---
+
+Here is my website.</code></pre>
+</div>
+<div id="content" class="section level1">
+<h1>Content</h1>
+<p>You can now add as many Rmarkdown files as you want for your content. Each one will be processed into an html file. For example in <code>Test Website</code>, we have two files, <code>about.Rmd</code> and <code>contact.Rmd</code>. Your Rmd files should have the yaml at top and then your Rmarkdown content.</p>
+<p>Here is a simple example.</p>
+<pre><code>---
+title: Simple Rmd File
+---
+
+Here is a simple file.</code></pre>
+<p><code>about.Rmd</code> is a fuller Rmd file with R code and figures.</p>
+<p>If you want the file linked to in your top nav bar, then add it to <code>_site.yml</code>.</p>
+<pre><code>name: &quot;my-website&quot;
+output_dir: &quot;.&quot;
+navbar:
+  title: &quot;My Website&quot;
+  left:
+    - text: &quot;About&quot;
+      href: about.html
+    - text: &quot;Contact&quot;
+      icon: fa-user-circle
+      href: contact.html
+output:
+  html_document:
+    theme: readable
+    toc_depth: 3
+    toc_float:
+      collapsed: false</code></pre>
+</div>
+<div id="extras" class="section level1">
+<h1>Extras</h1>
+<div id="table-of-contents" class="section level2">
+<h2>Table of Contents</h2>
+<p>If you want to see table of contents for your Rmd files, you specify toc properties in your <code>_site.yml</code> file.</p>
+<pre><code>output:
+  html_document:
+    theme: readable
+    toc_depth: 3
+    toc_float:
+      collapsed: false</code></pre>
+<p>and specify <code>toc: true</code> in your yaml at the top of your Rmd file.</p>
+<pre><code>output:
+  html_document:
+    toc: true</code></pre>
+<p>See the <code>about.Rmd</code> file for an example.</p>
+</div>
+<div id="themes" class="section level2">
+<h2>Themes</h2>
+<p>Your <code>_site.yml</code> file has a line that specifies the theme.</p>
+<pre><code>output:
+  html_document:
+    theme: readable</code></pre>
+<p>The following are automatically available to you: bootstrap, cerulean, cosmo, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united and yeti. Try changing the theme to one of these and rebuilding your website.</p>
+<p>You can download other bootstrap css files and put in site_libs if you want other themes. Do a search for ‘bootstrap themes free’.</p>
+</div>
+<div id="icons" class="section level2">
+<h2>Icons</h2>
+<p>You can easily add icons to your navigation tabs. The <code>icon:</code> line specifies the icon. See the FontAwesome website for icons available. Put <code>fa-</code> in front of the name. For example a photo icon would be specified <code>fa-picture-o</code>.</p>
+<pre><code>  left:
+    - text: &quot;Set-up&quot;
+      icon: fa-picture-o
+      href: setup.html</code></pre>
+</div>
+<div id="customizing" class="section level2">
+<h2>Customizing</h2>
+<p>You can add your own css file to customize the html. Add to your <code>_site.yml</code> file:</p>
+<pre><code>output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css</code></pre>
+<p>And then add a <code>styles.css</code> file to your folder.</p>
+<pre><code>h1 {
+  font-color: green
+}</code></pre>
+</div>
 </div>
 
 <div id="disqus_thread"></div>

@@ -1,0 +1,183 @@
+---
+title: "Simple Websites from Rmds"
+output:
+  html_document:
+    toc: true
+    include:
+      after_body: footer.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Set-up
+
+1. Go to https://github.com/eeholmes/Test-Website and copy all the files into a directory.
+
+- If GitHub Desktop works for you, then you can click 'Clone or download' and then click open in Desktop.
+
+- If GitHub Desktop is not working for you, then click 'Clone or download' and then download a zip file and unzip on your computer.
+
+2. Open RStudio and 'New Project' in the upper right.  Then select 'From Existing Directory' and select the directory where the 'Test-Website' files are.
+
+3. From RStudio, click 'Build' from upper right and then 'Build Website'.  Your website should open.  You can select 'View in browser'.
+
+- You can also right click on 'index.html' from the files, and select 'open in browser'.
+
+# Overview
+
+There are two required files for a website plus your content (your R Markdown files).
+
+The first required file is `_site.yml` which is your configuration file.
+
+The second required file is `index.Rmd` which is your landing page or page #1.
+
+Your content is specified in additional R Markdown files.  Not required, but your website is not very interesting without content.
+
+# _site.yml
+
+The `_site.yml` specifies the basic info about your site and the navigation bar at top.
+
+```
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "About"
+      icon: fa-bullhorn
+      href: about.html
+output:
+  html_document:
+    theme: readable
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+```
+
+# index.Rmd
+
+`index.Rmd` is just your landing page.  You can have as little or as much content as you want here.  When readers click on your site, they will see this page first.
+
+A minimal `index.Rmd` would look like:
+
+```
+---
+title: "My website"
+---
+
+Here is my website.
+```
+
+# Content
+
+You can now add as many Rmarkdown files as you want for your content.  Each one will be processed into an html file.  For example in `Test Website`, we have two files, `about.Rmd` and `contact.Rmd`.  Your Rmd files should have the yaml at top and then your Rmarkdown content.
+
+Here is a simple example.
+
+```
+---
+title: Simple Rmd File
+---
+
+Here is a simple file.
+```
+
+`about.Rmd` is a fuller Rmd file with R code and figures.
+
+If you want the file linked to in your top nav bar, then add it to `_site.yml`.   
+
+```
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "My Website"
+  left:
+    - text: "About"
+      href: about.html
+    - text: "Contact"
+      icon: fa-user-circle
+      href: contact.html
+output:
+  html_document:
+    theme: readable
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+```
+
+# Extras
+
+## Table of Contents
+
+If you want to see table of contents for your Rmd files, you specify toc properties in your `_site.yml` file.
+
+```
+output:
+  html_document:
+    theme: readable
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+```
+
+and specify `toc: true` in your yaml at the top of your Rmd file.  
+
+```
+output:
+  html_document:
+    toc: true
+```
+
+See the `about.Rmd` file for an example.
+
+## Themes
+
+Your `_site.yml` file has a line that specifies the theme.
+
+```
+output:
+  html_document:
+    theme: readable
+```
+
+The following are automatically available to you: bootstrap, cerulean, cosmo, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united and yeti.  Try changing the theme to one of these and rebuilding your website.
+
+You can download other bootstrap css files and put in site_libs if you want other themes.  Do a search for 'bootstrap themes free'.
+
+## Icons
+
+You can easily add icons to your navigation tabs.  The `icon:` line specifies the icon.  See the FontAwesome website for icons available.  Put `fa-` in front of the name.  For example a photo icon would be specified `fa-picture-o`.
+
+```
+  left:
+    - text: "Set-up"
+      icon: fa-picture-o
+      href: setup.html
+```
+
+## Customizing
+
+You can add your own css file to customize the html.  Add to your `_site.yml` file:
+
+```
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+```
+
+And then add a `styles.css` file to your folder.
+
+```
+h1 {
+  font-color: green
+}
+```

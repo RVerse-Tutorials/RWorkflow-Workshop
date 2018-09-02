@@ -1,5 +1,5 @@
 ---
-title: "RMarkdown Documents"
+title: "R Markdown Documents"
 output:
   html_document:
     toc: true
@@ -13,9 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Overview
 
-Rmarkdown is a format that allows you to combine text and R code.  From RStudio you can output your file in many formats: html, PDF, Word, presentations.
+R Markdown is a format that allows you to combine text and R code.  From RStudio you can output your file in many formats: html, PDF, Word, presentations.
 
-## Copy the Rmarkdown folder from GitHub
+## Get the template from GitHub
+
+The course website has a set of example R Markdown files for you to work with.  You need to download the files from GitHub.
 
 ### Method #1
 
