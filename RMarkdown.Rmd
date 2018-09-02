@@ -44,43 +44,23 @@ If that doesn't work, then go to https://github.com/RVerse-Tutorials/Rmarkdown-T
 4. Now you should see 'Publish Repository' in GitHub Desktop.  Uncheck the 'keep code private box' and then click 'Publish'.  Note, it can take a moment to work.
 
 
-## Assignment for next week: Create an RStudio Project with Your Own Data
+## Create documents in different formats
 
-Your mission for the following week---i.e., please have this done (or as done as you can get it) by Friday, April 14, 2017---is
-to prepare an RStudio project with your own data set, and provide some background about the data and
-the ways that you would like to analyze it.  The "rep-res-coho-example" is an example of what I 
-have in mind for this.  You should use the  README.Rmd from that project as a template for your own
-README.Rmd.  (To do this you can just copy the README.Rmd file into the top level of your project directory
-and then edit it to reflect your own data and project.)
+### HTML
 
+### Word
 
-To do all this you are going to want to make your own project.  Do that like this:
+### PDF
 
-1. In RStudio, choose "File->New Project..."
-1. Then choose "New Directory" and then choose "Empty Project"
-1. In the next dialog, choose a name (_it is best to  use only letters, numbers, dashes, and underscores, and include no spaces in the name_) for it **and be sure to click the "Create a git repository" button**.  
-1. Then click "Create Project".
-
-That should give you a new project.  Here are some guidelines for putting your own data in there
-
-* Put all of your data in a directory named `data` in your project.
-* CSV (comma separated values) is probably the best format to use.  It is text-readable without
-proprietary software (unlike an Excel file); however if you need to look at it in a tabular way with 
-Excel, (gasp), you can do that easily.  Tab-delimited text works if you have that, but CSV is preferred.
-* Use only letters, numbers, dashes, and underscores for the file names, (and periods for their extensions, i.e., `.csv`)
-* Give a brief description of your data in the README.Rmd.
+### Presentations
 
 
-## Reading for next week {#week2reading}
+## Put your report online
 
-This week (before Friday, April 14, 2017), please read the following sections of the R for Data Science book
+### RPubs
 
-* [Workflow basics](http://r4ds.had.co.nz/workflow-basics.html): super basic review on how R works.
-* [Workflow: projects](http://r4ds.had.co.nz/workflow-projects.html): info about organizing RStudio projects.
-* [Workflow: scripts](http://r4ds.had.co.nz/workflow-scripts.html):  how to evaluate code in scripts.
-* [tibbles](http://r4ds.had.co.nz/tibbles.html): a streamlined data frame format.
-* [data import](http://r4ds.had.co.nz/data-import.html) This is our key reading for the week.
+After knitting your Rmd file, a Preview will appear.  Click the 'Publish' button in the top right, select 'RPubs'.  This is a free service for publishing output.  Follow the instructions and you'll soon have a link you can share.
 
-When you are done with the _Data Import_ reading, take a whack at writing some code to read 
-the data files in your project into a variable (or several variables). 
+### GitHub
 
+If you have made your folder a Git repository, you can upload you html file to GitHub and share a link.  We will cover that when we talk about websites on GitHub.
