@@ -44,7 +44,28 @@ If that doesn't work, then go to https://github.com/RVerse-Tutorials/Rmarkdown-T
 4. Now you should see 'Publish Repository' in GitHub Desktop.  Uncheck the 'keep code private box' and then click 'Publish'.  Note, it can take a moment to work.
 
 
-## Create documents in different formats
+## Basic Rmd file
+
+Open up `Basic.Rmd`.  
+
+At the top you see
+
+```
+---
+title: "Basic"
+author: "EE Holmes"
+date: "9/2/2018"
+output: html_document
+---
+```
+
+This is the `yaml` which gives the instructions about how to process your R Markdown file.  The `yaml` file is sensitive to spaces.  Do not add or subtract spaces.  This `yaml` is very simple, but the `yaml` can be complex for some applications.  We will only be working with simple examples.
+
+After the `yaml` is the content.  To see a summary of R Markdown formating, click 'Help' menu and then 'Markdown Quick Reference'.
+
+## Create output
+
+We can create documents in different formats from this Rmd file.
 
 ### HTML
 
@@ -64,3 +85,10 @@ After knitting your Rmd file, a Preview will appear.  Click the 'Publish' button
 ### GitHub
 
 If you have made your folder a Git repository, you can upload you html file to GitHub and share a link.  We will cover that when we talk about websites on GitHub.
+
+## Other example Rmds
+
+* Many figures
+* Tables
+* Lots of math
+* Table of contents

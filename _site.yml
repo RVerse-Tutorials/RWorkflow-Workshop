@@ -11,7 +11,7 @@ navbar:
       href: rstudio.html
     - text: "RMarkdown"
       icon: fa-file
-      href: rmarkdown.html
+      href: RMarkdown.html
     - text: "About"
       href: about.html
 output:
