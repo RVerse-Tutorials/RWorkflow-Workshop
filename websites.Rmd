@@ -179,10 +179,48 @@ output:
     css: styles.css
 ```
 
-And then add a `styles.css` file to your folder.
+And then add a `styles.css` file to your folder.  You can change all the h1 headers to green.
 
 ```
 h1 {
   font-color: green
+}
+```
+
+Change the font-family and add some more space.
+
+```
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 2;
+}
+```
+
+Add more spacing between the sections.
+
+```
+.section {
+   padding-bottom: 2em;
+}
+```
+
+Etc, etc, etc, etc.
+
+## Fixing a navbar that wraps
+
+The bootstrap css doesn't handle navbars with many tabs very well.  It wraps and covers up the text.  Adding the following to your `styles.css` file will fix that.
+
+```
+/* Need to adjust the navbar behaviour so the navbar doesn't wrap */
+.navbar-nav { 
+  position: fixed;
+  left: 150px;
+  width: 700px;
+}
+
+.navbar-header {
+  position: fixed;
+  left: 30px;
+  width: 97%;
 }
 ```
