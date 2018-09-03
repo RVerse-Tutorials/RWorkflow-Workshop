@@ -1,14 +1,24 @@
 /* Need to adjust the navbar behaviour so the navbar doesn't wrap */
 .navbar-nav { 
-  position: fixed;
-  left: 150px;
-  width: 700px;
+position: fixed;
+left: 150px;
+width: 1000px;
+}
+
+.navbar-right { 
+position: fixed;
+left: 90%;
+width: 100px;
 }
 
 .navbar-header {
-  position: fixed;
-  left: 30px;
-  width: 97%;
+position: fixed;
+left: 30px;
+width: 97%;
+}
+
+.nav {
+    font-size: 15px;
 }
 
 body {
