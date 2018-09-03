@@ -2,7 +2,10 @@
 title: "R Workflow Short-Course"
 ---
 
+
 [Course Announcement](http://www.incois.gov.in/ITCOocean/ftsf.jsp)
+
+<img style="float: right;" src="images/tools-logo-transparent.png" width=30%>
 
 This short-course will cover Report-writing and Code documentation with R:
 
@@ -13,3 +16,13 @@ This short-course will cover Report-writing and Code documentation with R:
 - Creating simple websites from R packages on GitHub
 - Creating a book with R Markdown: Intro to Bookdown.
 - Creating and publishing RShiny applications
+
+<hr>
+
+
+<div style="text-align: center">
+Simple building blocks for bigger things
+
+<img style="border-radius: 50%;" src="images/aquaduct-sepia.jpg" width=30%>
+</div>
+
