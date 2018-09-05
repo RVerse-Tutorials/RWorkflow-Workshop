@@ -55,19 +55,16 @@ I have added a Disqus forum to the website.  [Create an account](https://disqus.
 
 ## Downloading repositories
 
-You need to download repositories from [RVerse-Tutorials](https://github.com/RVerse-Tutorials) for many of the labs.  There are a few ways that you can do this.
-
-## Get a repository from GitHub
-
-Here is how to download the 'Rmarkdown-Tutorial' repository from the [RVerse-Tutorials](https://github.com/RVerse-Tutorials/) GitHub account.  To download other repositories, just change the repository name.
+You will need to download repositories from [RVerse-Tutorials](https://github.com/RVerse-Tutorials) for many of the labs.  There are a few ways that you can do this.
 
 ### Method #1 Download from within R
 
-This is the method I will show in the lectures. The 'RWorkflowsetup' package has a download function. This function will create a folder with the name of the repository.
+This is the method I will show in the lectures. The 'RWorkflowsetup' package has a download function. This function will create a folder with the name of the repository.  Here is code to download the repository 'Rmarkdown-Tutorial'.  For others, just change the name of the repository.
 
 ```
 library(RWorkflowsetup)
-download.repo("Rmarkdown-Tutorial")
+repo = "Test"
+download.repo(repo)
 ```
 
 ### Method #2
@@ -75,7 +72,7 @@ download.repo("Rmarkdown-Tutorial")
 1. From RStudio, go to the menu option
 'File->New Project...'. Then from the resulting dialog, choose
 "Version Control".  Then choose "Git".  Then it asks for a "repository URL".
-Supply this: `https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial` and 
+Supply this: `https://github.com/RVerse-Tutorials/Test` and 
 leave the "Project Directory Name" empty.  And then choose a directory 
 in which to put it and click OK.
 
@@ -88,7 +85,7 @@ of it on your hard drive and open.
 
 ### Method #3
 
-Go to https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial and click 'Clone or download' and chose 'Download Zip'.  Unzip and you'll probably want to remove  'master' added to the end of the repository name.
+Go to https://github.com/RVerse-Tutorials/Test and click 'Clone or download' and chose 'Download Zip'.  Unzip and you'll probably want to remove  'master' added to the end of the repository name.
 
 If you chose, 'Clone in Desktop', you'll need to open a terminal window, navigate to the new folder you just downloaded, and run the git code `git remote rm origin` from within the terminal to detach the repository from the RVerse-Tutorials GitHub account.
 
