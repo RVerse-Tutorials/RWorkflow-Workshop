@@ -11,7 +11,7 @@
 
 
 
-<title>README.utf8</title>
+<title>README.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -90,6 +90,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -206,26 +209,42 @@ $(document).ready(function () {
     Websites
   </a>
 </li>
-<li>
-  <a href="jekyll.html">
-    <span class="fa fa-sitemap"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More Tools
      
-    Jekyll
+    <span class="caret"></span>
   </a>
-</li>
-<li>
-  <a href="bookdown.html">
-    <span class="fa fa-book"></span>
-     
-    Bookdown
-  </a>
-</li>
-<li>
-  <a href="shiny.html">
-    <span class="fa fa-gamepad"></span>
-     
-    Shiny
-  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="packages.html">
+        <span class="fa fa-archive"></span>
+         
+        R Packages
+      </a>
+    </li>
+    <li>
+      <a href="jekyll.html">
+        <span class="fa fa-sitemap"></span>
+         
+        Jekyll
+      </a>
+    </li>
+    <li>
+      <a href="bookdown.html">
+        <span class="fa fa-book"></span>
+         
+        Bookdown
+      </a>
+    </li>
+    <li>
+      <a href="shiny.html">
+        <span class="fa fa-gamepad"></span>
+         
+        Shiny
+      </a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

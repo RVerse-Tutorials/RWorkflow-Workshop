@@ -25,7 +25,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -94,6 +96,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -311,26 +316,42 @@ div.tocify {
     Websites
   </a>
 </li>
-<li>
-  <a href="jekyll.html">
-    <span class="fa fa-sitemap"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More Tools
      
-    Jekyll
+    <span class="caret"></span>
   </a>
-</li>
-<li>
-  <a href="bookdown.html">
-    <span class="fa fa-book"></span>
-     
-    Bookdown
-  </a>
-</li>
-<li>
-  <a href="shiny.html">
-    <span class="fa fa-gamepad"></span>
-     
-    Shiny
-  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="packages.html">
+        <span class="fa fa-archive"></span>
+         
+        R Packages
+      </a>
+    </li>
+    <li>
+      <a href="jekyll.html">
+        <span class="fa fa-sitemap"></span>
+         
+        Jekyll
+      </a>
+    </li>
+    <li>
+      <a href="bookdown.html">
+        <span class="fa fa-book"></span>
+         
+        Bookdown
+      </a>
+    </li>
+    <li>
+      <a href="shiny.html">
+        <span class="fa fa-gamepad"></span>
+         
+        Shiny
+      </a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -355,24 +376,13 @@ div.tocify {
 <h2>Overview</h2>
 <p>R Markdown is a format that allows you to combine text and R code. From RStudio you can output your file in many formats: html, PDF, Word, presentations.</p>
 </div>
-<div id="get-the-template-from-github" class="section level2">
-<h2>Get the template from GitHub</h2>
-<p>The course website has a set of example R Markdown files for you to work with. You need to download the files from GitHub.</p>
-<div id="method-1" class="section level3">
-<h3>Method #1</h3>
-<ol style="list-style-type: decimal">
-<li><p>From RStudio, go to the menu option ‘File-&gt;New Project…’. Then from the resulting dialog, choose “Version Control”. Then choose “Git”. Then it asks for a “repository URL”. Supply this: <code>https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial</code> and leave the “Project Directory Name” empty. And then choose a directory in which to put it and click OK.</p></li>
-<li>Click on the ‘More’ link in the Git Window of RStudio, and click ‘Shell’. Then issue this command.</li>
-</ol>
-<pre><code>git remote rm origin</code></pre>
-<p>This detaches the cloned repository from the remote repository on GitHub from where you cloned it. That will pull the RStudio project off of GitHub, make a local clone of it on your hard drive and open.</p>
-</div>
-<div id="method-2" class="section level3">
-<h3>Method #2</h3>
-<p>If that doesn’t work, then go to <a href="https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial" class="uri">https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial</a> and click ‘Clone or download’ and chose ‘Download Zip’. If you chose, ‘Clone in Desktop’, you’ll need to run the git code above to detach from GitHub.</p>
-</div>
-<div id="add-your-new-project-to-your-github-optional" class="section level3">
-<h3>Add your new Project to your GitHub (optional)</h3>
+<div id="get-the-templates" class="section level2">
+<h2>Get the templates</h2>
+<p>In RStudio, navigate to your ‘RWorkflow’ folder. Click ‘More’ in the Files panel and select ‘Set as working directory’. Issue these commands or use the alternate methods in <a href="set-up.html">Set-up</a>.</p>
+<pre><code>library(RWorkflowsetup)
+download.repo(&quot;Rmarkdown-Tutorial&quot;)</code></pre>
+<div id="add-your-new-project-to-your-github-account-optional" class="section level4">
+<h4>Add your new Project to your GitHub account (optional)</h4>
 <ol style="list-style-type: decimal">
 <li>Open GitHub Desktop.</li>
 <li>Click File &gt; Add Local Repository</li>
@@ -396,38 +406,31 @@ output: html_document
 </div>
 <div id="create-output" class="section level2">
 <h2>Create output</h2>
-<p>We can create documents in different formats from this Rmd file.</p>
-<div id="html" class="section level3">
-<h3>HTML</h3>
-</div>
-<div id="word" class="section level3">
-<h3>Word</h3>
-</div>
-<div id="pdf" class="section level3">
-<h3>PDF</h3>
-</div>
-<div id="presentations" class="section level3">
-<h3>Presentations</h3>
-</div>
+<p>We can create documents in different formats from this Rmd file. Click the drop-down menu next to the ‘knit’ button.</p>
+<ul>
+<li><strong>HTML</strong> Select ‘knit to HTML’ to create a web document.</li>
+<li><strong>Word</strong> Select ‘knit to Word’ to create a Word document.</li>
+<li><strong>PDF</strong> Select ‘knit to PDF’ to create a PDF.</li>
+</ul>
 </div>
 <div id="put-your-report-online" class="section level2">
 <h2>Put your report online</h2>
-<div id="rpubs" class="section level3">
-<h3>RPubs</h3>
+<div id="rpubs" class="section level4">
+<h4>RPubs</h4>
 <p>After knitting your Rmd file, a Preview will appear. Click the ‘Publish’ button in the top right, select ‘RPubs’. This is a free service for publishing output. Follow the instructions and you’ll soon have a link you can share.</p>
 </div>
-<div id="github" class="section level3">
-<h3>GitHub</h3>
+<div id="github" class="section level4">
+<h4>GitHub</h4>
 <p>If you have made your folder a Git repository, you can upload you html file to GitHub and share a link. We will cover that when we talk about websites on GitHub.</p>
 </div>
 </div>
 <div id="other-example-rmds" class="section level2">
 <h2>Other example Rmds</h2>
 <ul>
-<li>Many figures</li>
-<li>Tables</li>
-<li>Lots of math</li>
+<li>Figures and Tables</li>
+<li>Math</li>
 <li>Table of contents</li>
+<li>Presentations</li>
 </ul>
 </div>
 

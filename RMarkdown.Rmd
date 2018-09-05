@@ -15,32 +15,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 R Markdown is a format that allows you to combine text and R code.  From RStudio you can output your file in many formats: html, PDF, Word, presentations.
 
-## Get the template from GitHub
+## Get the templates
 
-The course website has a set of example R Markdown files for you to work with.  You need to download the files from GitHub.
+In RStudio, navigate to your 'RWorkflow' folder.  Click 'More' in the Files panel and select 'Set as working directory'.  Issue these commands or use the alternate methods in [Set-up](set-up.html).
 
-### Method #1
-
-1. From RStudio, go to the menu option
-'File->New Project...'. Then from the resulting dialog, choose
-"Version Control".  Then choose "Git".  Then it asks for a "repository URL".
-Supply this: `https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial` and 
-leave the "Project Directory Name" empty.  And then choose a directory 
-in which to put it and click OK.
-
-2. Click on the 'More' link in the Git Window of RStudio, and click 'Shell'.  Then issue this command.
 ```
-git remote rm origin
+library(RWorkflowsetup)
+download.repo("Rmarkdown-Tutorial")
 ```
-This detaches the cloned repository from the remote repository on GitHub from where you cloned it.
-That will pull the RStudio project off of GitHub, make a local clone
-of it on your hard drive and open.
 
-### Method #2
-
-If that doesn't work, then go to https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial and click 'Clone or download' and chose 'Download Zip'.  If you chose, 'Clone in Desktop', you'll need to run the git code above to detach from GitHub.
-
-### Add your new Project to your GitHub (optional)
+#### Add your new Project to your GitHub account (optional)
 
 1. Open GitHub Desktop.
 2. Click File > Add Local Repository
@@ -69,30 +53,25 @@ After the `yaml` is the content.  To see a summary of R Markdown formating, clic
 
 ## Create output
 
-We can create documents in different formats from this Rmd file.
+We can create documents in different formats from this Rmd file.  Click the drop-down menu next to the 'knit' button.
 
-### HTML
-
-### Word
-
-### PDF
-
-### Presentations
-
+* **HTML** Select 'knit to HTML' to create a web document.
+* **Word** Select 'knit to Word' to create a Word document.
+* **PDF** Select 'knit to PDF' to create a PDF.
 
 ## Put your report online
 
-### RPubs
+#### RPubs
 
 After knitting your Rmd file, a Preview will appear.  Click the 'Publish' button in the top right, select 'RPubs'.  This is a free service for publishing output.  Follow the instructions and you'll soon have a link you can share.
 
-### GitHub
+#### GitHub
 
 If you have made your folder a Git repository, you can upload you html file to GitHub and share a link.  We will cover that when we talk about websites on GitHub.
 
 ## Other example Rmds
 
-* Many figures
-* Tables
-* Lots of math
+* Figures and Tables
+* Math
 * Table of contents
+* Presentations

@@ -17,6 +17,9 @@ navbar:
     href: websites.html
   - text: More Tools
     menu:
+    - text: R Packages
+      icon: fa-archive
+      href: packages.html
     - text: Jekyll
       icon: fa-sitemap
       href: jekyll.html

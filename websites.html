@@ -25,7 +25,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -94,6 +96,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -311,26 +316,42 @@ div.tocify {
     Websites
   </a>
 </li>
-<li>
-  <a href="jekyll.html">
-    <span class="fa fa-sitemap"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More Tools
      
-    Jekyll
+    <span class="caret"></span>
   </a>
-</li>
-<li>
-  <a href="bookdown.html">
-    <span class="fa fa-book"></span>
-     
-    Bookdown
-  </a>
-</li>
-<li>
-  <a href="shiny.html">
-    <span class="fa fa-gamepad"></span>
-     
-    Shiny
-  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="packages.html">
+        <span class="fa fa-archive"></span>
+         
+        R Packages
+      </a>
+    </li>
+    <li>
+      <a href="jekyll.html">
+        <span class="fa fa-sitemap"></span>
+         
+        Jekyll
+      </a>
+    </li>
+    <li>
+      <a href="bookdown.html">
+        <span class="fa fa-book"></span>
+         
+        Bookdown
+      </a>
+    </li>
+    <li>
+      <a href="shiny.html">
+        <span class="fa fa-gamepad"></span>
+         
+        Shiny
+      </a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -351,32 +372,31 @@ div.tocify {
 </div>
 
 
-<div id="set-up" class="section level1">
-<h1>Set-up</h1>
-<ol style="list-style-type: decimal">
-<li>Go to <a href="https://github.com/eeholmes/Test-Website" class="uri">https://github.com/eeholmes/Test-Website</a> and copy all the files into a directory.</li>
-</ol>
-<ul>
-<li><p>If GitHub Desktop works for you, then you can click ‘Clone or download’ and then click open in Desktop.</p></li>
-<li><p>If GitHub Desktop is not working for you, then click ‘Clone or download’ and then download a zip file and unzip on your computer.</p></li>
-</ul>
+<div id="download-a-template" class="section level2">
+<h2>Download a template</h2>
+<p>In RStudio, navigate to your ‘RWorkflow’ folder. Click ‘More’ in the Files panel and select ‘Set as working directory’. Issue these commands or use the alternate methods in <a href="set-up.html">Set-up</a>.</p>
+<pre><code>library(RWorkflowsetup)
+download.repo(&quot;Test-Website&quot;)</code></pre>
+</div>
+<div id="build-the-website" class="section level2">
+<h2>Build the website</h2>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Open RStudio and ‘New Project’ in the upper right. Then select ‘From Existing Directory’ and select the directory where the ‘Test-Website’ files are.</p></li>
+<li><p>Open RStudio and ‘New Project’ in the upper right. Then select ‘From Existing Directory’ and select the ‘Test-Website’ directory.</p></li>
 <li><p>From RStudio, click ‘Build’ from upper right and then ‘Build Website’. Your website should open. You can select ‘View in browser’.</p></li>
 </ol>
 <ul>
 <li>You can also right click on ‘index.html’ from the files, and select ‘open in browser’.</li>
 </ul>
 </div>
-<div id="overview" class="section level1">
-<h1>Overview</h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
 <p>There are two required files for a website plus your content (your R Markdown files).</p>
 <p>The first required file is <code>_site.yml</code> which is your configuration file.</p>
 <p>The second required file is <code>index.Rmd</code> which is your landing page or page #1.</p>
 <p>Your content is specified in additional R Markdown files. Not required, but your website is not very interesting without content.</p>
 </div>
-<div id="site.yml" class="section level1">
-<h1>_site.yml</h1>
+<div id="site.yml" class="section level2">
+<h2>_site.yml</h2>
 <p>The <code>_site.yml</code> specifies the basic info about your site and the navigation bar at top.</p>
 <pre><code>name: &quot;my-website&quot;
 output_dir: &quot;.&quot;
@@ -401,8 +421,8 @@ output:
     toc_float:
       collapsed: false</code></pre>
 </div>
-<div id="index.rmd" class="section level1">
-<h1>index.Rmd</h1>
+<div id="index.rmd" class="section level2">
+<h2>index.Rmd</h2>
 <p><code>index.Rmd</code> is just your landing page. You can have as little or as much content as you want here. When readers click on your site, they will see this page first.</p>
 <p>A minimal <code>index.Rmd</code> would look like:</p>
 <pre><code>---
@@ -411,8 +431,8 @@ title: &quot;My website&quot;
 
 Here is my website.</code></pre>
 </div>
-<div id="content" class="section level1">
-<h1>Content</h1>
+<div id="content" class="section level2">
+<h2>Content</h2>
 <p>You can now add as many Rmarkdown files as you want for your content. Each one will be processed into an html file. For example in <code>Test Website</code>, we have two files, <code>about.Rmd</code> and <code>contact.Rmd</code>. Your Rmd files should have the yaml at top and then your Rmarkdown content.</p>
 <p>Here is a simple example.</p>
 <pre><code>---
@@ -439,10 +459,27 @@ output:
     toc_float:
       collapsed: false</code></pre>
 </div>
-<div id="extras" class="section level1">
-<h1>Extras</h1>
-<div id="table-of-contents" class="section level2">
-<h2>Table of Contents</h2>
+<div id="put-it-online" class="section level2">
+<h2>Put it online</h2>
+<p>Here is how to make your website live on GitHub.</p>
+<p>First you need to add this as a repository on GitHub.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open GitHub Desktop and select File &gt; New Repository. Type ‘Test-Website’ (or if you renamed it, then whatever you renamed it to). Leave everything else blank (for now).</p></li>
+<li><p>This adds your repository to GitHub Desktop. Now click ‘Publish’ in the top right corner. If ‘private’ is checked, uncheck that.</p></li>
+</ol>
+<p>Next you need to open your repository on GitHub and set it up to serve a webpage.</p>
+<ol style="list-style-type: decimal">
+<li>Go to your GitHub account.</li>
+<li>Click on the new Test-Website repository.</li>
+<li>Click on Settings. <img src="images/GitHub_pages_1.png" alt="Settings" /></li>
+<li>Scroll down to GitHub Pages and change source from ‘none’ to ‘master branch’. <img src="images/GitHub_pages_2.png" alt="Source" /></li>
+<li>Wait a few minutes and then go to your new webpage. The link will appear just above where your changed the source.</li>
+</ol>
+</div>
+<div id="extras" class="section level2">
+<h2>Extras</h2>
+<div id="table-of-contents" class="section level3">
+<h3>Table of Contents</h3>
 <p>If you want to see table of contents for your Rmd files, you specify toc properties in your <code>_site.yml</code> file.</p>
 <pre><code>output:
   html_document:
@@ -456,8 +493,8 @@ output:
     toc: true</code></pre>
 <p>See the <code>about.Rmd</code> file for an example.</p>
 </div>
-<div id="themes" class="section level2">
-<h2>Themes</h2>
+<div id="themes" class="section level3">
+<h3>Themes</h3>
 <p>Your <code>_site.yml</code> file has a line that specifies the theme.</p>
 <pre><code>output:
   html_document:
@@ -465,16 +502,16 @@ output:
 <p>The following are automatically available to you: bootstrap, cerulean, cosmo, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united and yeti. Try changing the theme to one of these and rebuilding your website.</p>
 <p>You can download other bootstrap css files and put in site_libs if you want other themes. Do a search for ‘bootstrap themes free’.</p>
 </div>
-<div id="icons" class="section level2">
-<h2>Icons</h2>
+<div id="icons" class="section level3">
+<h3>Icons</h3>
 <p>You can easily add icons to your navigation tabs. The <code>icon:</code> line specifies the icon. See the FontAwesome website for icons available. Put <code>fa-</code> in front of the name. For example a photo icon would be specified <code>fa-picture-o</code>.</p>
 <pre><code>  left:
     - text: &quot;Set-up&quot;
       icon: fa-picture-o
       href: setup.html</code></pre>
 </div>
-<div id="customizing" class="section level2">
-<h2>Customizing</h2>
+<div id="customizing" class="section level3">
+<h3>Customizing</h3>
 <p>You can add your own css file to customize the html. Add to your <code>_site.yml</code> file:</p>
 <pre><code>output:
   html_document:
@@ -498,8 +535,8 @@ output:
 }</code></pre>
 <p>Etc, etc, etc, etc.</p>
 </div>
-<div id="fixing-a-navbar-that-wraps" class="section level2">
-<h2>Fixing a navbar that wraps</h2>
+<div id="fixing-a-navbar-that-wraps" class="section level3">
+<h3>Fixing a navbar that wraps</h3>
 <p>The bootstrap css doesn’t handle navbars with many tabs very well. It wraps and covers up the text. Adding the following to your <code>styles.css</code> file will fix that.</p>
 <pre><code>/* Need to adjust the navbar behaviour so the navbar doesn&#39;t wrap */
 .navbar-nav { 

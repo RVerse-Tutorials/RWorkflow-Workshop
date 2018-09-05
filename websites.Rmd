@@ -11,21 +11,24 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Set-up
+## Download a template
 
-1. Go to https://github.com/eeholmes/Test-Website and copy all the files into a directory.
+In RStudio, navigate to your 'RWorkflow' folder.  Click 'More' in the Files panel and select 'Set as working directory'.  Issue these commands or use the alternate methods in [Set-up](set-up.html).
 
-- If GitHub Desktop works for you, then you can click 'Clone or download' and then click open in Desktop.
+```
+library(RWorkflowsetup)
+download.repo("Test-Website")
+```
 
-- If GitHub Desktop is not working for you, then click 'Clone or download' and then download a zip file and unzip on your computer.
+## Build the website
 
-2. Open RStudio and 'New Project' in the upper right.  Then select 'From Existing Directory' and select the directory where the 'Test-Website' files are.
+2. Open RStudio and 'New Project' in the upper right.  Then select 'From Existing Directory' and select the 'Test-Website' directory.
 
 3. From RStudio, click 'Build' from upper right and then 'Build Website'.  Your website should open.  You can select 'View in browser'.
 
 - You can also right click on 'index.html' from the files, and select 'open in browser'.
 
-# Overview
+## Overview
 
 There are two required files for a website plus your content (your R Markdown files).
 
@@ -35,7 +38,7 @@ The second required file is `index.Rmd` which is your landing page or page #1.
 
 Your content is specified in additional R Markdown files.  Not required, but your website is not very interesting without content.
 
-# _site.yml
+## _site.yml
 
 The `_site.yml` specifies the basic info about your site and the navigation bar at top.
 
@@ -64,7 +67,7 @@ output:
       collapsed: false
 ```
 
-# index.Rmd
+## index.Rmd
 
 `index.Rmd` is just your landing page.  You can have as little or as much content as you want here.  When readers click on your site, they will see this page first.
 
@@ -78,7 +81,7 @@ title: "My website"
 Here is my website.
 ```
 
-# Content
+## Content
 
 You can now add as many Rmarkdown files as you want for your content.  Each one will be processed into an html file.  For example in `Test Website`, we have two files, `about.Rmd` and `contact.Rmd`.  Your Rmd files should have the yaml at top and then your Rmarkdown content.
 
@@ -115,9 +118,29 @@ output:
       collapsed: false
 ```
 
-# Extras
+## Put it online
 
-## Table of Contents
+Here is how to make your website live on GitHub.
+
+First you need to add this as a repository on GitHub.
+
+1. Open GitHub Desktop and select File > New Repository.  Type 'Test-Website' (or if you renamed it, then whatever you renamed it to).  Leave everything else blank (for now).
+
+2. This adds your repository to GitHub Desktop.  Now click 'Publish' in the top right corner.  If 'private' is checked, uncheck that.
+
+Next you need to open your repository on GitHub and set it up to serve a webpage.
+
+1. Go to your GitHub account.
+2. Click on the new Test-Website repository.
+3. Click on Settings.
+![Settings](images/GitHub_pages_1.png)
+4. Scroll down to GitHub Pages and change source from 'none' to 'master branch'.
+![Source](images/GitHub_pages_2.png)
+5. Wait a few minutes and then go to your new webpage.  The link will appear just above where your changed the source.
+
+## Extras
+
+### Table of Contents
 
 If you want to see table of contents for your Rmd files, you specify toc properties in your `_site.yml` file.
 
@@ -140,7 +163,7 @@ output:
 
 See the `about.Rmd` file for an example.
 
-## Themes
+### Themes
 
 Your `_site.yml` file has a line that specifies the theme.
 
@@ -154,7 +177,7 @@ The following are automatically available to you: bootstrap, cerulean, cosmo, fl
 
 You can download other bootstrap css files and put in site_libs if you want other themes.  Do a search for 'bootstrap themes free'.
 
-## Icons
+### Icons
 
 You can easily add icons to your navigation tabs.  The `icon:` line specifies the icon.  See the FontAwesome website for icons available.  Put `fa-` in front of the name.  For example a photo icon would be specified `fa-picture-o`.
 
@@ -165,7 +188,7 @@ You can easily add icons to your navigation tabs.  The `icon:` line specifies th
       href: setup.html
 ```
 
-## Customizing
+### Customizing
 
 You can add your own css file to customize the html.  Add to your `_site.yml` file:
 
@@ -206,7 +229,7 @@ Add more spacing between the sections.
 
 Etc, etc, etc, etc.
 
-## Fixing a navbar that wraps
+### Fixing a navbar that wraps
 
 The bootstrap css doesn't handle navbars with many tabs very well.  It wraps and covers up the text.  Adding the following to your `styles.css` file will fix that.
 

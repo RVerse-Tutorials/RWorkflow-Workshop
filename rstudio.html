@@ -25,7 +25,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -94,6 +96,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -311,26 +316,42 @@ div.tocify {
     Websites
   </a>
 </li>
-<li>
-  <a href="jekyll.html">
-    <span class="fa fa-sitemap"></span>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    More Tools
      
-    Jekyll
+    <span class="caret"></span>
   </a>
-</li>
-<li>
-  <a href="bookdown.html">
-    <span class="fa fa-book"></span>
-     
-    Bookdown
-  </a>
-</li>
-<li>
-  <a href="shiny.html">
-    <span class="fa fa-gamepad"></span>
-     
-    Shiny
-  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="packages.html">
+        <span class="fa fa-archive"></span>
+         
+        R Packages
+      </a>
+    </li>
+    <li>
+      <a href="jekyll.html">
+        <span class="fa fa-sitemap"></span>
+         
+        Jekyll
+      </a>
+    </li>
+    <li>
+      <a href="bookdown.html">
+        <span class="fa fa-book"></span>
+         
+        Bookdown
+      </a>
+    </li>
+    <li>
+      <a href="shiny.html">
+        <span class="fa fa-gamepad"></span>
+         
+        Shiny
+      </a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -353,7 +374,7 @@ div.tocify {
 
 <div id="never-worked-with-r" class="section level2">
 <h2>Never worked with R?</h2>
-<p>If you have never worked with R, you can get a basic familiarity by going through <a href="https://www.datacamp.com/courses/free-introduction-to-r">this free tutorial</a>. Takes about 4 hours. You’ll need decent internet access to run.</p>
+<p>If you have never worked with R, you can get a basic familiarity by going through <a href="https://www.datacamp.com/courses/free-introduction-to-r">this free tutorial</a>. Takes about 4 hours.</p>
 <p>You can also learn R straight from within R using the <a href="https://swirlstats.com/">swirl package</a>. This doesn’t require internet access except to install the package.</p>
 <p>Here is another basic R introduction from <a href="https://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html">ComputerWorld</a>.</p>
 </div>
