@@ -25,21 +25,32 @@ The free GitHub account does not have private repositories.  Everything is publi
 3. Under 'Accounts', sign into your GitHub account.
 3. Under 'Git', enter your name (or initials) and the email you used for your GitHub account.
 
-## Install RStudio and R
+## Install R and RStudio (Windows users)
 
-1. **RStudio:** Install the latest "development" version of RStudio becuase it has features that we may want to use during this course.  Get it from [https://www.rstudio.com/products/rstudio/download/preview/](https://www.rstudio.com/products/rstudio/download/preview/) and install the appropriate one for your OS.
-
-1. **R:**  Make sure you have the latest version of R.  
+* **R:**  Make sure you have the latest version of R.  
 Go to [https://cran.r-project.org/](https://cran.r-project.org/) and find the download link for your computer system.
 
-1. **bookdown:** package.  We want the latest development version, which 
-can be obtained from GitHub by issuing the following commans at the R prompt (i.e. in the console window of RStudio:)
+* **RStudio:** Install the latest "development" version of RStudio becuase it has features that we may want to use during this course.  Get it from [https://www.rstudio.com/products/rstudio/download/preview/](https://www.rstudio.com/products/rstudio/download/preview/) and install the appropriate one for your OS.
+
+## Set up RStudio to use Git
+
+1. Open RStudio
+2. Go to Global Options (from the Tools menu)
+3. Click Git/SVN
+4. Click Enable version control interface for RStudio projects
+
+## Install R packages
+
+From the command line in R Studio
+
+1. **bookdown:** package.  Enter the following code at the command line (`>`).
+
 ```{r get-bd, eval=FALSE}
 install.packages("devtools")  
 devtools::install_github("rstudio/bookdown")
 ```
 
-1. Install **other packages** that we are going to be need. Installing from GitHub will automatically install any needed packages that you do not have installed.  I have created a blank package on GitHub that just declares the packages you will need, so when you install this it will install the packages you need.
+2. Install **other packages** that we are going to be need. I have created a package on GitHub that will install the packages you need.
 
 ```{r get-packages, eval=FALSE}
 devtools::install_github("RVerse-Tutorials/RWorkflowsetup")
@@ -55,9 +66,17 @@ I have added a Disqus forum to the website.  [Create an account](https://disqus.
 
 ## Downloading repositories
 
-You will need to download repositories from [RVerse-Tutorials](https://github.com/RVerse-Tutorials) for many of the labs.  There are a few ways that you can do this.
+You will need to download repositories from [RVerse-Tutorials](https://github.com/RVerse-Tutorials) for many of the labs.  Here is the preferred way to do that.
 
-### Method #1 Download from within R
+1. Go to the repository you want to copy in your browser.
+2. Click 'Fork' in the upper right corner of the repository.
+3. Open RStudio.  Click File > New Project > Version Control
+4. Paste in the url of the repository you are copying---the **forked** repository in your GitHub account.  For example, `https://github.com/<youraccount>/Test-Website`  You can leave project name blank.  Replace `<youraccount>` with your GitHub account.
+
+[Watch a video that shows you how to do this](https://youtu.be/b6AaTHFIY7U)
+
+
+### Alternate Method #1 Download from within R
 
 This is the method I will show in the lectures. The 'RWorkflowsetup' package has a download function. This function will create a folder with the name of the repository.  Here is code to download the repository 'Rmarkdown-Tutorial'.  For others, just change the name of the repository.
 
@@ -67,7 +86,7 @@ repo = "Test"
 download.repo(repo)
 ```
 
-### Method #2
+### Alternate Method #2
 
 1. From RStudio, go to the menu option
 'File->New Project...'. Then from the resulting dialog, choose
@@ -83,9 +102,19 @@ git remote rm origin
 This detaches the cloned repository from the remote repository on GitHub from where you cloned it. That will pull the RStudio project off of GitHub, make a local clone
 of it on your hard drive and open.
 
-### Method #3
+### Alternate Method #3
 
 Go to https://github.com/RVerse-Tutorials/Test and click 'Clone or download' and chose 'Download Zip'.  Unzip and you'll probably want to remove  'master' added to the end of the repository name.
 
 If you chose, 'Clone in Desktop', you'll need to open a terminal window, navigate to the new folder you just downloaded, and run the git code `git remote rm origin` from within the terminal to detach the repository from the RVerse-Tutorials GitHub account.
+
+
+## Packages with C++ code
+
+We will not be doing this in this short course, but often you will want to install packages with C++ code.  To do that, you will need Rtools (Windows) or Xcode (Mac)
+
+* **Rtools** Windows users  [Rtools](https://cran.r-project.org/bin/windows/Rtools/) also so you can build packages with C++ code if needed.  See comments here about changing path. [Rtools](http://stat545.com/packages01_system-prep.html#windows-system-prep)
+
+* **Xcode** Mac users Open terminal and type the following command `xcode-select --install`
+
 
