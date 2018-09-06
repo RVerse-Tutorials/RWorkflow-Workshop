@@ -378,18 +378,18 @@ div.tocify {
 </div>
 <div id="get-the-templates" class="section level2">
 <h2>Get the templates</h2>
-<p>In RStudio, navigate to your ‘RWorkflow’ folder. Click ‘More’ in the Files panel and select ‘Set as working directory’. Issue these commands or use the alternate methods in <a href="set-up.html">Set-up</a>.</p>
+<p>Fork the repository, <a href="https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial">Rmarkdown-Tutorial</a> or download a zip file of the repository. To do the latter, you can navigate to your ‘RWorkflow’ folder in RStudio and click ‘More’ in the Files panel and select ‘Set as working directory’. Then issue these commands.</p>
 <pre><code>library(RWorkflowsetup)
 download.repo(&quot;Rmarkdown-Tutorial&quot;)</code></pre>
-<div id="add-your-new-project-to-your-github-account-optional" class="section level4">
-<h4>Add your new Project to your GitHub account (optional)</h4>
+</div>
+<div id="add-your-new-project-to-your-github-account-optional" class="section level2">
+<h2>Add your new Project to your GitHub account (optional)</h2>
 <ol style="list-style-type: decimal">
 <li>Open GitHub Desktop.</li>
 <li>Click File &gt; Add Local Repository</li>
 <li>Navigate to the folder <code>Rmarkdown-Tutorial</code> and click Add Repository</li>
 <li>Now you should see ‘Publish Repository’ in GitHub Desktop. Uncheck the ‘keep code private box’ and then click ‘Publish’. Note, it can take a moment to work.</li>
 </ol>
-</div>
 </div>
 <div id="basic-rmd-file" class="section level2">
 <h2>Basic Rmd file</h2>
@@ -427,10 +427,16 @@ output: html_document
 <div id="other-example-rmds" class="section level2">
 <h2>Other example Rmds</h2>
 <ul>
-<li>Figures and Tables</li>
-<li>Math</li>
-<li>Table of contents</li>
-<li>Presentations</li>
+<li>Figures <code>Figures.Rmd</code></li>
+<li>Tables <code>Table.Rmd</code></li>
+<li>Math <code>Math.Rmd</code></li>
+<li>Table of contents and Code folding <code>Extras.Rmd</code></li>
+<li>Presentations
+<ul>
+<li><strong>ioslidy_presentation.Rmd</strong> Chose File &gt; New &gt; R Markdown &gt; ioslidy presentation to create this presentation template.</li>
+<li><strong>xaringan_presentation.Rmd</strong> This is the file that produced a lecture in the forecasting workshop. You will need to install xaringan</li>
+</ul>
+<pre><code>install.packages(&quot;xaringan&quot;)</code></pre></li>
 </ul>
 </div>
 

@@ -17,14 +17,14 @@ R Markdown is a format that allows you to combine text and R code.  From RStudio
 
 ## Get the templates
 
-In RStudio, navigate to your 'RWorkflow' folder.  Click 'More' in the Files panel and select 'Set as working directory'.  Issue these commands or use the alternate methods in [Set-up](set-up.html).
+[Fork](https://youtu.be/b6AaTHFIY7U) the repository [Rmarkdown-Tutorial](https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial) or download a zip file of the repository.  To do the latter, you can navigate to your 'RWorkflow' folder in RStudio and click 'More' in the Files panel and select 'Set as working directory'. Then issue these commands.
 
 ```
 library(RWorkflowsetup)
 download.repo("Rmarkdown-Tutorial")
 ```
 
-#### Add your new Project to your GitHub account (optional)
+## Add your new Project to your GitHub account (optional)
 
 1. Open GitHub Desktop.
 2. Click File > Add Local Repository
@@ -71,7 +71,13 @@ If you have made your folder a Git repository, you can upload you html file to G
 
 ## Other example Rmds
 
-* Figures and Tables
-* Math
-* Table of contents
+* Figures `Figures.Rmd`
+* Tables `Table.Rmd`
+* Math `Math.Rmd`
+* Table of contents and Code folding  `Extras.Rmd`
 * Presentations
+  - **ioslidy_presentation.Rmd** Chose File > New > R Markdown > ioslidy presentation to create this presentation template.
+  - **xaringan_presentation.Rmd** This is the file that produced a lecture in the forecasting workshop.  You will need to install xaringan
+```
+install.packages("xaringan")
+```
