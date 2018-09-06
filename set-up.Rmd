@@ -66,12 +66,21 @@ I have added a Disqus forum to the website.  [Create an account](https://disqus.
 
 ## Downloading repositories
 
-You will need to download repositories from [RVerse-Tutorials](https://github.com/RVerse-Tutorials) for many of the labs.  Here is the preferred way to do that.
+You will need to download repositories from [RVerse-Tutorials](https://github.com/RVerse-Tutorials) for many of the labs.  Here is one way to do that. [Watch a video that shows you how to do this](https://youtu.be/b6AaTHFIY7U)
 
 1. Go to the repository you want to copy in your browser.
 2. Click 'Fork' in the upper right corner of the repository.
 3. Open RStudio.  Click File > New Project > Version Control
 4. Paste in the url of the repository you are copying---the **forked** repository in your GitHub account.  For example, `https://github.com/<youraccount>/Test-Website`  You can leave project name blank.  Replace `<youraccount>` with your GitHub account.
+
+Another way is to download the repository as a zip file and unzip.  [Watch a video that shows you how to do this](https://youtu.be/b6AaTHFIY7U)
+
+Another way is to use the function I wrote:
+
+```
+library(RWorkflowsetup)
+download.repo("Rmarkdown-Tutorial")
+```
 
 [Watch a video that shows you how to do this](https://youtu.be/b6AaTHFIY7U)
 
