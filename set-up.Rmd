@@ -30,7 +30,7 @@ The free GitHub account does not have private repositories.  Everything is publi
 * **R:**  Make sure you have the latest version of R.  
 Go to [https://cran.r-project.org/](https://cran.r-project.org/) and find the download link for your computer system.
 
-* **RStudio:** Install the latest "development" version of RStudio becuase it has features that we may want to use during this course.  Get it from [https://www.rstudio.com/products/rstudio/download/preview/](https://www.rstudio.com/products/rstudio/download/preview/) and install the appropriate one for your OS.
+* **RStudio:** Install the latest version of RStudio.  Get it from [https://www.rstudio.com/products/rstudio/download](https://www.rstudio.com/products/rstudio/download) and install the appropriate one for your OS.
 
 ## Set up RStudio to use Git
 
@@ -75,39 +75,7 @@ You will need to download repositories from [RVerse-Tutorials](https://github.co
 
 [Watch a video that shows you how to do this](https://youtu.be/b6AaTHFIY7U)
 
-
-### Alternate Method #1 Download from within R
-
-This is the method I will show in the lectures. The 'RWorkflowsetup' package has a download function. This function will create a folder with the name of the repository.  Here is code to download the repository 'Rmarkdown-Tutorial'.  For others, just change the name of the repository.
-
-```
-library(RWorkflowsetup)
-repo = "Test"
-download.repo(repo)
-```
-
-### Alternate Method #2
-
-1. From RStudio, go to the menu option
-'File->New Project...'. Then from the resulting dialog, choose
-"Version Control".  Then choose "Git".  Then it asks for a "repository URL".
-Supply this: `https://github.com/RVerse-Tutorials/Test` and 
-leave the "Project Directory Name" empty.  And then choose a directory 
-in which to put it and click OK.
-
-2. Click on the 'More' link in the Git Window of RStudio, and click 'Shell'.  Then issue this command.
-```
-git remote rm origin
-```
-This detaches the cloned repository from the remote repository on GitHub from where you cloned it. That will pull the RStudio project off of GitHub, make a local clone
-of it on your hard drive and open.
-
-### Alternate Method #3
-
-Go to https://github.com/RVerse-Tutorials/Test and click 'Clone or download' and chose 'Download Zip'.  Unzip and you'll probably want to remove  'master' added to the end of the repository name.
-
-If you chose, 'Clone in Desktop', you'll need to open a terminal window, navigate to the new folder you just downloaded, and run the git code `git remote rm origin` from within the terminal to detach the repository from the RVerse-Tutorials GitHub account.
-
+For other ways to download a repository, see this [page](Git-RStudio.html).
 
 ## Packages with C++ code
 
