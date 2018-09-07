@@ -21,8 +21,8 @@ This short-course will cover Report-writing and Code documentation with R:
 
 
 <div style="text-align: center">
-Simple building blocks can build many things
+Simple building blocks. Endless creations.
 
-<img style="border-radius: 50%;" src="images/aquaduct-sepia.jpg" width=30%>
+<img style="border-radius: 50%; float: right" src="images/aquaduct-sepia.jpg" width=20%>
 </div>
 
