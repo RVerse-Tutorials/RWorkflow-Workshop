@@ -21,8 +21,5 @@ This short-course will cover Report-writing and Code documentation with R:
 
 
 <div style="text-align: center">
-Simple building blocks. Endless creations.
-
-<img style="border-radius: 50%; float: right" src="images/aquaduct-sepia.jpg" width=20%>
+<i class="fas fa-cubes"></i> Simple building blocks. Endless creations. <i class="fas fa-cubes"></i>
 </div>
-
