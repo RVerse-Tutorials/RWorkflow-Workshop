@@ -12,6 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Fork the template
+=======
+This will show you how to make a very simple website with R Markdown and put that online via GitHub Pages.  When you are ready to learn more go to the [Links](links.html) page for more tutorials.
+
+## Download a template
 
 Go to the [RVerse-Tutorials\Test-Website](https://github.com/RVerse-Tutorials/Test-Website) repository and click the Fork button in the upper right.  You will need to be logged into your GitHub account.
  
