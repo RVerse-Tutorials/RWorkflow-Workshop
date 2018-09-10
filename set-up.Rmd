@@ -73,7 +73,7 @@ You will need to download repositories from [RVerse-Tutorials](https://github.co
 3. Open RStudio.  Click File > New Project > Version Control
 4. Paste in the url of the repository you are copying---the **forked** repository in your GitHub account.  For example, `https://github.com/<youraccount>/Test-Website`  You can leave project name blank.  Replace `<youraccount>` with your GitHub account.
 
-Another way is to download the repository as a zip file and unzip.  [Watch a video that shows you how to do this](https://youtu.be/b6AaTHFIY7U)
+Another way is to download the repository as a zip file and unzip.  [Watch a video that shows you how to do this](https://youtu.be/bYySjso7vRo)
 
 Another way is to use the function I wrote:
 

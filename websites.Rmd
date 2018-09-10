@@ -11,22 +11,21 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Download a template
+## Fork the template
 
-In RStudio, navigate to your 'RWorkflow' folder.  Click 'More' in the Files panel and select 'Set as working directory'.  Issue these commands or use the alternate methods in [Set-up](set-up.html).
-
-```
-library(RWorkflowsetup)
-download.repo("Test-Website")
-```
+Go to the [RVerse-Tutorials\Test-Website](https://github.com/RVerse-Tutorials/Test-Website) repository and click the Fork button in the upper right.  You will need to be logged into your GitHub account.
+ 
+[Watch a video of this step](https://youtu.be/xeeKrGuaFRg)
 
 ## Build the website
 
-2. Open RStudio and 'New Project' in the upper right.  Then select 'From Existing Directory' and select the 'Test-Website' directory.
+1. Open RStudio and 'New Project' in the upper right.  Then select 'From Existing Directory' and select the 'Test-Website' directory.
 
-3. From RStudio, click 'Build' from upper right and then 'Build Website'.  Your website should open.  You can select 'View in browser'.
+2. From RStudio, click 'Build' from upper right and then 'Build Website'.  Your website should open.  You can select 'View in browser'.
 
-- You can also right click on 'index.html' from the files, and select 'open in browser'.
+  - You can also right click on 'index.html' from the files, and select 'open in browser'.
+  
+[Watch a video of this step](https://youtu.be/94iHk0UnxJc)
 
 ## Overview
 
@@ -118,7 +117,9 @@ output:
       collapsed: false
 ```
 
-## Put it online
+## Make your website live
+
+[Watch a video of this step](https://youtu.be/eHWi5XmTO8U)
 
 Here is how to make your website live on GitHub.
 

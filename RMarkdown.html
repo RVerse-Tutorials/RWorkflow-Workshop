@@ -378,17 +378,18 @@ div.tocify {
 </div>
 <div id="get-the-templates" class="section level2">
 <h2>Get the templates</h2>
-<p>Fork the repository, <a href="https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial">Rmarkdown-Tutorial</a> or download a zip file of the repository. To do the latter, you can navigate to your ‘RWorkflow’ folder in RStudio and click ‘More’ in the Files panel and select ‘Set as working directory’. Then issue these commands.</p>
+<p><a href="https://youtu.be/b6AaTHFIY7U">Fork</a> the repository <a href="https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial">Rmarkdown-Tutorial</a> or download a zip file of the repository. To do the latter, you can navigate to your ‘RWorkflow’ folder in RStudio and click ‘More’ in the Files panel and select ‘Set as working directory’. Then issue these commands.</p>
 <pre><code>library(RWorkflowsetup)
 download.repo(&quot;Rmarkdown-Tutorial&quot;)</code></pre>
 </div>
-<div id="add-your-new-project-to-your-github-account-optional" class="section level2">
-<h2>Add your new Project to your GitHub account (optional)</h2>
+<div id="add-your-project-to-github-optional" class="section level2">
+<h2>Add your Project to GitHub (optional)</h2>
 <ol style="list-style-type: decimal">
 <li>Open GitHub Desktop.</li>
 <li>Click File &gt; Add Local Repository</li>
-<li>Navigate to the folder <code>Rmarkdown-Tutorial</code> and click Add Repository</li>
-<li>Now you should see ‘Publish Repository’ in GitHub Desktop. Uncheck the ‘keep code private box’ and then click ‘Publish’. Note, it can take a moment to work.</li>
+<li>Navigate to the folder <code>Rmarkdown-Tutorial</code> and click Add Repository. If your forked the repository, you are done.<br />
+</li>
+<li>If you downloaded, you should see ‘Publish Repository’ in GitHub Desktop. Uncheck the ‘keep code private box’ and then click ‘Publish’. Note, it can take a moment to work.</li>
 </ol>
 </div>
 <div id="basic-rmd-file" class="section level2">
@@ -417,11 +418,11 @@ output: html_document
 <h2>Put your report online</h2>
 <div id="rpubs" class="section level4">
 <h4>RPubs</h4>
-<p>After knitting your Rmd file, a Preview will appear. Click the ‘Publish’ button in the top right, select ‘RPubs’. This is a free service for publishing output. Follow the instructions and you’ll soon have a link you can share.</p>
+<p>After knitting your Rmd file, a Preview will appear. Click the ‘Publish’ button in the top right, select ‘RPubs’. This is a free service for publishing output. Follow the instructions and you’ll soon have a link you can share. <a href="https://youtu.be/GJ36zamYVLg">Here</a> is a video showing how to do this.</p>
 </div>
 <div id="github" class="section level4">
 <h4>GitHub</h4>
-<p>If you have made your folder a Git repository, you can upload you html file to GitHub and share a link. We will cover that when we talk about websites on GitHub.</p>
+<p>If you have made your folder a Git repository, you can upload your html file to GitHub and share a link. We will cover that when we talk about websites on GitHub.</p>
 </div>
 </div>
 <div id="other-example-rmds" class="section level2">
@@ -434,10 +435,10 @@ output: html_document
 <li>Presentations
 <ul>
 <li><strong>ioslidy_presentation.Rmd</strong> Chose File &gt; New &gt; R Markdown &gt; ioslidy presentation to create this presentation template.</li>
-<li><strong>xaringan_presentation.Rmd</strong> This is the file that produced a lecture in the forecasting workshop. You will need to install xaringan</li>
+<li><strong>xaringan_presentation.Rmd</strong> This is the file that produced a lecture in the forecasting workshop. You will need to install xaringan.</li>
+</ul></li>
 </ul>
-<pre><code>install.packages(&quot;xaringan&quot;)</code></pre></li>
-</ul>
+<pre><code>install.packages(&quot;xaringan&quot;)</code></pre>
 </div>
 
 <div id="disqus_thread"></div>
