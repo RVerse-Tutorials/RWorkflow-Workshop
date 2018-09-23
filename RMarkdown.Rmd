@@ -17,12 +17,14 @@ R Markdown is a format that allows you to combine text and R code.  From RStudio
 
 ## Get the templates
 
-[Fork](https://youtu.be/b6AaTHFIY7U) the repository [Rmarkdown-Tutorial](https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial) or download a zip file of the repository.  To do the latter, you can navigate to your 'RWorkflow' folder in RStudio and click 'More' in the Files panel and select 'Set as working directory'. Then issue these commands.
+[Fork](https://youtu.be/b6AaTHFIY7U) the repository [Rmarkdown-Tutorial](https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial) or download a zip file of the repository.  To do the latter, you can use the 'download zip file' button on the GitHub repository or you can navigate to your 'RWorkflow' folder in RStudio and click 'More' in the Files panel and select 'Set as working directory'. Then issue these commands.
 
 ```
 library(RWorkflowsetup)
 download.repo("Rmarkdown-Tutorial")
 ```
+
+*INCOIS participants: You will find a copy of the repository in the RWorkflow directory that you copied from the thumb drive.*
 
 ## Add your Project to GitHub (optional)
 
@@ -59,6 +61,15 @@ We can create documents in different formats from this Rmd file.  Click the drop
 * **Word** Select 'knit to Word' to create a Word document.
 * **PDF** Select 'knit to PDF' to create a PDF.
 
+## Getting help
+
+In RStudio, click the 'Help' tab in the top nav bar.  You will see 'Markdown Quick Reference'.  That has basic markdown syntax.  You can also click 'Cheatsheets' and there are two references sheets.   Using Google, you can also find answers to any questions that the RStudio help files doesn't answer.
+
+Tips:
+
+* Markdown is sensitive to leading spaces.  "  ## Topic" will not produce a header while "## Topic" will.  " ```{r}" (note leading space) will not be interpreted as R code.
+* Markdown is sensitive to line returns.  If you are tying to make a list, "1. item", then you must have two line returns before the "1. item".
+
 ## Put your report online
 
 #### RPubs
@@ -77,7 +88,7 @@ If you have made your folder a Git repository, you can upload your html file to 
 * Table of contents and Code folding  `Extras.Rmd`
 * Presentations
   - **ioslidy_presentation.Rmd** Chose File > New > R Markdown > ioslidy presentation to create this presentation template.
-  - **xaringan_presentation.Rmd** This is the file that produced a lecture in the forecasting workshop.  You will need to install xaringan.
+  - **xaringan_presentation.Rmd** This is the file that produced a lecture in the forecasting workshop.  You will need to install the xaringan package.
   
 ```
 install.packages("xaringan")
