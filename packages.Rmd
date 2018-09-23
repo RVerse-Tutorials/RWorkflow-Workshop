@@ -31,14 +31,21 @@ library(roxygen2)
 create("myfirstpackage")
 ```
 
-But for this short course, make a copy of the 'TestPackage' repository.
+But for this short course, fork or make a copy of the 'TestPackage' repository.
 
-In RStudio, navigate to your 'RWorkflow' folder.  Click 'More' in the Files panel and select 'Set as working directory'.  Issue these commands or use the alternate methods in [Set-up](set-up.html).
+Go to the [RVerse-Tutorials\TestPackage](https://github.com/RVerse-Tutorials/TestPackage) repository and click the Fork button in the upper right.  You will need to be logged into your GitHub account.
+ 
+[Watch a video of this step](https://youtu.be/xeeKrGuaFRg)
+
+Or you can download a zip file of the repository.  To do the latter, you can use the 'download zip file' button on the GitHub repository or you can navigate to your 'RWorkflow' folder in RStudio and click 'More' in the Files panel and select 'Set as working directory'. Then issue these commands.
 
 ```
 library(RWorkflowsetup)
 download.repo("TestPackage")
 ```
+
+
+*INCOIS participants: You will find a copy of the repository in the RWorkflow directory that you copied from the thumb drive.*
 
 ## Parts of an R package
 
