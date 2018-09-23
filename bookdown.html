@@ -466,8 +466,51 @@ div.tocify {
 </div>
 
 
-<div id="set-up" class="section level1">
-<h1>Set-up</h1>
+<p>The bookdown package makes it easy to create books with R Markdown and RStudio. These can be easily published online and in various formats: HTML, PDF, ePub, and Kindle. Read about bookdown and see hundreds of online books written with it at <a href="https://bookdown.org/">bookdown.org</a>.</p>
+<p>Once you are ready to write your own book, read the <a href="https://bookdown.org/yihui/bookdown/">online documentation</a>.</p>
+<p>Examples:</p>
+<ul>
+<li>The <a href="https://bookdown.org/">bookdown.org</a> website has hundreds of examples.</li>
+<li>We have a time-series book using it: <a href="https://nwfsc-timeseries.github.io/atsa-labs/">Applied Time-Series Analysis</a></li>
+</ul>
+<div id="download-the-template" class="section level2">
+<h2>Download the template</h2>
+<p>Download a zip file of the <a href="https://github.com/RVerse-Tutorials/bookdown-demo">bookdown-demo</a> repository. You can use the ‘download zip file’ button on the GitHub repository or you can navigate to your ‘RWorkflow’ folder in RStudio and click ‘More’ in the Files panel and select ‘Set as working directory’. Then issue these commands.</p>
+<pre><code>library(RWorkflowsetup)
+download.repo(&quot;bookdown-demo&quot;)</code></pre>
+<p><em>INCOIS participants: You will find a copy of the repository in the RWorkflow directory that you copied from the thumb drive.</em></p>
+<p>This is a copy of the <a href="https://github.com/rstudio/bookdown-demo">original bookdown-demo</a> by Yihui Xie, the creator of the bookdown package, with a few changes so it works immediately with GitHub.</p>
+</div>
+<div id="build-the-book" class="section level2">
+<h2>Build the book</h2>
+<ol style="list-style-type: decimal">
+<li>Open RStudio</li>
+<li>Click the project button in top right and select ‘New Project’.</li>
+<li>Click ‘Existing Directory’ and choose your ‘bookdown-demo’ folder.</li>
+<li>Click the Build tab and click ‘Build book’</li>
+</ol>
+<p>Your book should appear.</p>
+</div>
+<div id="post-and-online-version-of-your-book-via-github" class="section level2">
+<h2>Post and online version of your book via GitHub</h2>
+<p>You can host your book many places. To do so on GitHub, do the following.</p>
+<ol style="list-style-type: decimal">
+<li>Make your bookdown-demo folder into a repository.</li>
+</ol>
+<ul>
+<li>Open GitHub Desktop, click ‘File &gt; New Repository’</li>
+<li>Type <code>bookdown-demo</code> as the name and <code>&lt;yourbasedir&gt;\RWorkflow</code> as the local path. This assumes that the bookdown-demo folder is in the RWorkflow directory. If not, replace the path with the directory where you put the bookdown-demo folder.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Publish the bookdown-demo folder to GitHub. Click the Publish button in GitHub Desktop.</li>
+<li>Open the repository on GitHub.</li>
+</ol>
+<ul>
+<li>Click Settings, and scroll down to <code>GitHub Pages</code>. Change the source to <code>master branch/docs</code> folder and click save.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Your book should appear at <code>https://&lt;yourname&gt;.github.io/bookdown-demo/</code> in a few minutes.</li>
+</ol>
 </div>
 
 <div id="disqus_thread"></div>
