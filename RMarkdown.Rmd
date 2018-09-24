@@ -15,6 +15,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 R Markdown is a format that allows you to combine text and R code.  From RStudio you can output your file in many formats: html, PDF, Word, presentations.  We are exploring a small slice of R Markdown.  When you are ready to explore more, go to [the R Markdown Definitive Guide](https://bookdown.org/yihui/rmarkdown/).
 
+Note, to make PDF files you will need a LaTeX installation.  If you don't have one already (if you are not sure, then you don't), you can install [tinytex](https://yihui.name/tinytex/).  Run these lines:
+
+```
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
 ## Get the templates
 
 [Fork](https://youtu.be/b6AaTHFIY7U) the repository [Rmarkdown-Tutorial](https://github.com/RVerse-Tutorials/Rmarkdown-Tutorial) or download a zip file of the repository.  To do the latter, you can use the 'download zip file' button on the GitHub repository or you can navigate to your 'RWorkflow' folder in RStudio and click 'More' in the Files panel and select 'Set as working directory'. Then issue these commands.
