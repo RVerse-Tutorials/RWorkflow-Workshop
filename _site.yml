@@ -38,6 +38,9 @@ navbar:
     href: https://rverse-tutorials.github.io/RWorkflow-Workshop
   - icon: fa-line-chart
     href: https://fish-forecast.github.io/Catch-Forecasting-INCOIS/
+  - icon: fa-github
+    href: https://github.com/RVerse-Tutorials/RWorkflow-Workshop
+    
 output:
   html_document:
     theme: readable
