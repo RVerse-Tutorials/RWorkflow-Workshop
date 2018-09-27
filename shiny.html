@@ -396,30 +396,127 @@ div.tocify {
 </div>
 
 
-<div id="set-up" class="section level1">
-<h1>Set-up</h1>
+<p><a href="https://shiny.rstudio.com/">shiny applicatons</a> are a GUI (graphical user interface) that can run a R-based application. You can then post this online and it will run from an R server (not your computer). Users can run your application from the web without having to install R. In fact they can run from any browser, for example a smart phone. Alternatively, you can just have it in a package and provide it as a way for users to run analyses when they use your package from R.</p>
+<div id="fisheries-examples" class="section level2">
+<h2>Fisheries examples</h2>
+<p>Here are two example shiny apps that we have at the NWFSC. They are simple but are intended mainly to allow users to run standard analyses or explore data. shiny applications can be quite sophisticated and ‘shiny’. Search online for ‘shiny demos’.</p>
+<ul>
+<li><a href="https://dataexplorer.northwestscience.fisheries.noaa.gov/fisheye/NetRevExplorer/">Fisheries Economics Data Explorer</a>
+<ul>
+<li>Proprietary data</li>
+</ul></li>
+<li><a href="https://dataexplorer.northwestscience.fisheries.noaa.gov/nwc/agTrend/">Steller Sea Lion Trend Estimation</a>
+<ul>
+<li>Needed specialized add-on software</li>
+</ul></li>
+</ul>
+<p>The U.S. Geological Survey (a U.S. federal agency) also it active in developing tools to be used by the public and serves these on its <a href="http://usgs-r.github.io/">usgs-r.github.io</a> organizational site. They have been active in using Shiny apps for data exploration.</p>
+<ul>
+<li><a href="https://lebs.shinyapps.io/western-basin/">Lake Erie Fish Survey</a> - <a href="https://github.com/taylorstewart/lebs-western-basin-app">code</a></li>
+<li><a href="http://usgs-r.github.io/toxEval/index.html">toxEval</a></li>
+</ul>
+</div>
+<div id="make-your-first-shiny-app" class="section level2">
+<h2>Make your first shiny app</h2>
+<ol style="list-style-type: decimal">
+<li>Install the shiny package.</li>
+</ol>
+<pre><code>install.packages(&quot;shiny&quot;)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Click File &gt; New &gt; Shiny Web App…</li>
+<li>Select a location to put the application folder.</li>
+<li>Select “Multiple File”. You can choose single file, but I will demo the separate case with a separate file for the interface code and ‘workhorse’ code.</li>
+<li>Give you application a name.</li>
+<li>When the files ‘ui.R’ and ‘server.R’ open, click ‘Run App’.</li>
+</ol>
+<p>That’s it. You made a shiny application. To stop the app, close the window or hit ESC at the command line in RStudio.</p>
+</div>
+<div id="ui.r-file" class="section level2">
+<h2>ui.R file</h2>
+<p>This is the code that specifies the graphical interface.</p>
+<pre><code># Define UI for application that draws a histogram
+shinyUI(fluidPage(
+  
+  # Application title
+  titlePanel(&quot;Old Faithful Geyser Data&quot;),
+  
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+    sidebarPanel(
+       sliderInput(&quot;bins&quot;,
+                   &quot;Number of bins:&quot;,
+                   min = 1,
+                   max = 50,
+                   value = 30)
+    ),
+    
+    # Show a plot of the generated distribution
+    mainPanel(
+       plotOutput(&quot;distPlot&quot;)
+    )
+  )
+))</code></pre>
+</div>
+<div id="server.r" class="section level2">
+<h2>server.R</h2>
+<p>This part has the R code that does the analysis, makes plots, makes table, etc.</p>
+<pre><code>shinyServer(function(input, output) {
+   
+  output$distPlot &lt;- renderPlot({
+    
+    # generate bins based on input$bins from ui.R
+    x    &lt;- faithful[, 2] 
+    bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+    
+    # draw the histogram with the specified number of bins
+    hist(x, breaks = bins, col = &#39;darkgray&#39;, border = &#39;white&#39;)
+    
+  })
+  
+})</code></pre>
+</div>
+<div id="what-can-shiny-apps-do-and-how-can-i-copy-that" class="section level2">
+<h2>What can shiny apps do and how can I copy that?</h2>
+<p>Go to the <a href="https://shiny.rstudio.com/gallery/">RStudio shiny gallery</a>, scroll down to the “Start Simple” section and start there. Once you want to add some more sections to your app, look lower at the Widgets sections. The code for the examples is there.</p>
+<p>Development of anything past a fairly simple shiny app is quite time-consuming. This is a task that I outsource.</p>
+</div>
+<div id="putting-your-application-online" class="section level2">
+<h2>Putting your application online</h2>
+<p>NW Fisheries Science Center (where I work) has its own R Shiny Server because we has applications with proprietary data that cannot be put on non-NOAA server. In addition, many of our applications require specialized extra software for fitting Bayesian models. Thus our application need more than just R packages.</p>
+<p>However, if your application does not have these special constraints, you can host online for free with <a href="http://www.shinyapps.io/" class="uri">http://www.shinyapps.io/</a>.</p>
+<p>Follow the instructions <a href="https://shiny.rstudio.com/articles/shinyapps.html">here</a>. In summary:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sign up for an account at <a href="http://www.shinyapps.io/" class="uri">http://www.shinyapps.io/</a></p></li>
+<li>install the rsconnect package</li>
+</ol>
+<pre><code>install.packages(&quot;rsconnect&quot;)
+library(rsconnect)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Login into your account at <a href="http://www.shinyapps.io/" class="uri">http://www.shinyapps.io/</a>. Click on your user name in top right, and click ‘Tokens’</p></li>
+<li>A window should popup with code that looks like</li>
+</ol>
+<pre><code>rsconnect::setAccountInfo(name=&quot;&lt;ACCOUNT&gt;&quot;, token=&quot;&lt;TOKEN&gt;&quot;, secret=&quot;&lt;SECRET&gt;&quot;)</code></pre>
+<p>Click ‘Copy to clipboard’.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Paste that code into the command line in R.</p></li>
+<li><p>From R, click on the <code>ui.R</code> or <code>server.R</code> file. Click ‘Run App’. You should see a ‘Publish’ button in the top right. Click that. Select ‘shinyapps.io’ and log into your account.</p></li>
+<li><p>When your app opens, copy the url to the app.</p></li>
+</ol>
+</div>
+<div id="adding-a-shiny-app-to-your-r-package" class="section level2">
+<h2>Adding a shiny app to your R package</h2>
+<ol style="list-style-type: decimal">
+<li><p>In your DESCRIPTION file, add ‘shiny’ to the list of packages in the ‘Imports:’ line.</p></li>
+<li><p>Create a folder called ‘inst’ in your package.</p></li>
+<li><p>Create a folder called ‘shiny’ in that.</p></li>
+<li><p>Within that folder, put your folder with all your application files. ‘ui.R’, ‘server.R’, any data files, any function files.</p></li>
+<li>To run</li>
+</ol>
+<pre><code>library(mypackage)
+runApp(&quot;myapp&quot;)</code></pre>
+<p>Replace ‘mypackage’ and ‘myapp’ with the right names.</p>
 </div>
 
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://rworkflow1.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
 </div>
