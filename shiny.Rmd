@@ -95,6 +95,8 @@ shinyServer(function(input, output) {
 
 Go to the [RStudio shiny gallery](https://shiny.rstudio.com/gallery/), scroll down to the "Start Simple" section and start there.  Once you want to add some more sections to your app, look lower at the Widgets sections.  The code for the examples is there.
 
+You'll also want to go through RStudio's [online tutorial](https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/) for shiny apps.
+
 Development of anything past a fairly simple shiny app is quite time-consuming.  This is a task that I outsource.
 
 ## Putting your application online
@@ -137,10 +139,20 @@ Click 'Copy to clipboard'.
 
 3. Within that folder, put your folder with all your application files.  'ui.R', 'server.R', any data files, any function files.
 
+5. Add the following code to a files called  `launchApp.R` to your R directory.  Change "myapp" and "mypackage" to the right names.
+```
+#' @export
+launchApp <- function(x="myapp") {
+  appDir <- system.file("shiny", "myapp", package = "mypackage")
+  shiny::runApp(appDir, display.mode = "normal")
+}
+```
+Rebuild your package.  If later you add more shiny apps, but their folder in the shiny directory too.  You run them with `launchApp("mynewapp")`.
+
 4. To run
 ```
 library(mypackage)
-runApp("myapp")
+runIt("myapp")
 ```
 Replace 'mypackage' and 'myapp' with the right names.
 

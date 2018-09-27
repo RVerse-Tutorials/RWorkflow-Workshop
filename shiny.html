@@ -478,6 +478,7 @@ shinyUI(fluidPage(
 <div id="what-can-shiny-apps-do-and-how-can-i-copy-that" class="section level2">
 <h2>What can shiny apps do and how can I copy that?</h2>
 <p>Go to the <a href="https://shiny.rstudio.com/gallery/">RStudio shiny gallery</a>, scroll down to the “Start Simple” section and start there. Once you want to add some more sections to your app, look lower at the Widgets sections. The code for the examples is there.</p>
+<p>You’ll also want to go through RStudio’s <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/">online tutorial</a> for shiny apps.</p>
 <p>Development of anything past a fairly simple shiny app is quite time-consuming. This is a task that I outsource.</p>
 </div>
 <div id="putting-your-application-online" class="section level2">
@@ -510,10 +511,19 @@ library(rsconnect)</code></pre>
 <li><p>Create a folder called ‘inst’ in your package.</p></li>
 <li><p>Create a folder called ‘shiny’ in that.</p></li>
 <li><p>Within that folder, put your folder with all your application files. ‘ui.R’, ‘server.R’, any data files, any function files.</p></li>
+<li>Add the following code to a files called <code>launchApp.R</code> to your R directory. Change “myapp” and “mypackage” to the right names.</li>
+</ol>
+<pre><code>#&#39; @export
+launchApp &lt;- function(x=&quot;myapp&quot;) {
+  appDir &lt;- system.file(&quot;shiny&quot;, &quot;myapp&quot;, package = &quot;mypackage&quot;)
+  shiny::runApp(appDir, display.mode = &quot;normal&quot;)
+}</code></pre>
+<p>Rebuild your package. If later you add more shiny apps, but their folder in the shiny directory too. You run them with <code>launchApp(&quot;mynewapp&quot;)</code>.</p>
+<ol start="4" style="list-style-type: decimal">
 <li>To run</li>
 </ol>
 <pre><code>library(mypackage)
-runApp(&quot;myapp&quot;)</code></pre>
+runIt(&quot;myapp&quot;)</code></pre>
 <p>Replace ‘mypackage’ and ‘myapp’ with the right names.</p>
 </div>
 
