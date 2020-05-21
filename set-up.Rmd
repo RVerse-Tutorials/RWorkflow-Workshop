@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Get an account on GitHub
 
-If you don't already have an account on GitHub, go to [github.com](github.com) and click the "sign up" link near upper right 
+If you don't already have an account on GitHub, go to [github.com](https://github.com) and click the "sign up" link near upper right 
 of the page.  It is pretty self-explanatory.  Go ahead and get a **free** account.  
 
 The free GitHub account does not have private repositories.  Everything is public and viewable.  You can upgrade (for money) and get private repositories.  Or _if you are a student_, you can get private repositories from GitHub for free.  Go to [https://education.github.com/pack](https://education.github.com/pack) to sign up for your free student pack.  You will need to upload proof that you are a student or faculty.
@@ -51,10 +51,9 @@ From the command line in R Studio
 
 ```{r get-bd, eval=FALSE}
 install.packages("devtools")  
-devtools::install_github("rstudio/bookdown")
 ```
 
-2. Install **other packages** that we are going to be need. I have created a package on GitHub that will install the packages you need.
+2. Install the **packages** that we are going to be need. I have created a package on GitHub that will install the packages you need.
 
 ```{r get-packages, eval=FALSE}
 devtools::install_github("RVerse-Tutorials/RWorkflowsetup")
@@ -63,10 +62,6 @@ devtools::install_github("RVerse-Tutorials/RWorkflowsetup")
 ## Create a workshop folder
 
 Create a folder/directory on your computer for the workshop materials.  You can create it anywhere you want.  But name it `RWorkflow` just so we all use the same folder name for the workshop.
-
-## Disqus forum
-
-I have added a Disqus forum to the website.  [Create an account](https://disqus.com/) if you would like to be able to add comments/questions.  This will allow people to pose questions to the group and allow me (and others) to answer.
 
 ## Downloading repositories
 

@@ -21,5 +21,5 @@ This short-course will cover Report-writing and Code documentation with R:
 
 
 <div style="text-align: center">
-<i class="fas fa-cubes"></i> NOAA Fisheries -- NW Fisheries Science Center <i class="fas fa-cubes"></i>
+<i class="fas fa-cubes"></i> ------------------------------------ <i class="fas fa-cubes"></i>
 </div>

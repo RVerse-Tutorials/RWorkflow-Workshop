@@ -77,6 +77,10 @@ Tips:
 * Markdown is sensitive to leading spaces.  "  ## Topic" will not produce a header while "## Topic" will.  " ```{r}" (note leading space) will not be interpreted as R code.
 * Markdown is sensitive to line returns.  If you are tying to make a list, "1. item", then you must have two line returns before the "1. item".
 
+## Start a new Rmarkdown file
+
+Click the File tab, then select New File > R Markdown. This will open a template R Markdown file.  You will be asked for a title and whether to have the output be html, PDF, or Word.
+
 ## Put your report online
 
 #### RPubs
