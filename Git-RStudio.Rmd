@@ -61,6 +61,6 @@ We will not be doing this in this short course, but often you will want to insta
 
 * **Rtools** Windows users  [Rtools](https://cran.r-project.org/bin/windows/Rtools/) also so you can build packages with C++ code if needed.  See comments here about changing path. [Rtools](http://stat545.com/packages01_system-prep.html#windows-system-prep)
 
-* **Xcode** Mac users Open terminal and type the following command `xcode-select --install`
+* **Xcode** Mac users Open terminal and type the following command `xcode-select --install` [Read these instructions too](https://thecoatlessprofessor.com/programming/cpp/r-compiler-tools-for-rcpp-on-macos/).
 
 
